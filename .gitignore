@@ -1,0 +1,28 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Python
+scripts/.venv/
+scripts/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
