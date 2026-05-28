@@ -4,6 +4,7 @@ import { createHeadGrid } from './components/head-grid.js';
 import { createSearchBar } from './components/search-bar.js';
 import { createFilterPanel } from './components/filter-panel.js';
 import { createPagination } from './components/pagination.js';
+import { createDetailModal } from './components/detail-modal.js';
 
 const app = document.querySelector('#app');
 
@@ -132,8 +133,7 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
                 `;
 
                 const grid = createHeadGrid(paginated.items, (head) => {
-                    console.log('Clicked head:', head.name);
-                    // TODO: Open expanded modal when clicking a card
+                    createDetailModal(head);
                 });
 
                 gridWrapper.appendChild(grid);
