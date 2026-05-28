@@ -7,7 +7,7 @@
 1. Initialize Vite project
 2. Place sample `heads.json` in `frontend/public/` for development
 3. Implement `data.js` — load and parse `heads.json`, expose in-memory filter/search/sort functions
-4. Refactor WebGL viewer from `headViewer.html` into reusable `HeadPreviewComponent`
+4. Refactor WebGL viewer into reusable `HeadPreviewComponent`
 5. Build catalog grid with cards (preview canvas, name, rarity badge, price summary)
 6. Build search/filter/pagination UI (all client-side, no API calls)
 7. Implement expanded detail modal (400×400 canvas, full 360° mouse drag rotation)

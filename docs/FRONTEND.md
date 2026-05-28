@@ -5,7 +5,7 @@
 - Vite (build tool, dev server)
 - Vanilla JavaScript (no framework)
 - CSS3 (styling, dark theme)
-- WebGL 1.0 (3D head previews, refactored from existing headViewer.html)
+- WebGL 1.0 (3D head previews)
 
 ---
 
