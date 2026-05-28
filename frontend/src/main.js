@@ -1,60 +1,46 @@
-import './style.css'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.js'
+import './style.css';
+import { loadHeads, getHeads } from './data.js';
+import { HeadPreviewComponent } from './viewer.js';
 
-document.querySelector('#app').innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${javascriptLogo}" class="framework" alt="JavaScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const app = document.querySelector('#app');
 
-<div class="ticks"></div>
+// Render a simple loading state
+app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;font-size:1.2rem;color:#999;">Loading heads...</div>';
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-          <img class="button-icon" src="${javascriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+// Initialize
+(async () => {
+    try {
+        await loadHeads();
+        const heads = getHeads();
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+        if (heads.length === 0) {
+            app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;color:#e07070;">No heads found in heads.json</div>';
+            return;
+        }
 
-setupCounter(document.querySelector('#counter'))
+        // Pick a random head
+        const head = heads[Math.floor(Math.random() * heads.length)];
+
+        // Build price HTML
+        let priceHtml = '';
+        if (head.price.diamonds) priceHtml += '<p style="margin:8px 0;">💎 ' + head.price.diamonds + ' diamond' + (head.price.diamonds !== 1 ? 's' : '') + '</p>';
+        if (head.price.emeralds) priceHtml += '<p style="margin:8px 0;">💚 ' + head.price.emeralds + ' emerald' + (head.price.emeralds !== 1 ? 's' : '') + '</p>';
+        if (head.price.iron) priceHtml += '<p style="margin:8px 0;">⬜ ' + head.price.iron + ' iron' + (head.price.iron !== 1 ? 's' : '') + '</p>';
+        if (Object.keys(head.price).length === 0) priceHtml = '<p style="color:#999;">Price not set</p>';
+
+        let tagsHtml = '';
+        if (head.tags.length) {
+            const tagSpans = head.tags.map(t => '<span style="background:#3a6ea8;color:#fff;padding:6px 12px;border-radius:4px;font-size:0.85rem;">' + t + '</span>').join('');
+            tagsHtml = '<div style="background:#242424;border:1px solid #333;border-radius:8px;padding:20px;"><h2 style="font-size:0.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Tags</h2><div style="display:flex;flex-wrap:wrap;gap:8px;">' + tagSpans + '</div></div>';
+        }
+
+        app.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;padding:40px 20px;min-height:100vh;background:#1a1a1a;color:#e0e0e0;font-family:\'Segoe UI\',sans-serif;"><h1 style="font-size:1.6rem;margin-bottom:28px;color:#fff;letter-spacing:0.5px;">Random Head Sample</h1><div style="display:flex;gap:32px;max-width:800px;width:100%;"><div style="flex:0 0 auto;"><div style="background:#242424;border:1px solid #333;border-radius:8px;padding:20px;display:flex;flex-direction:column;align-items:center;"><h2 style="font-size:0.95rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Preview</h2><canvas id="headCanvas" width="320" height="320" style="border:2px solid #444;border-radius:4px;"></canvas></div></div><div style="flex:1;display:flex;flex-direction:column;gap:20px;justify-content:center;"><div style="background:#242424;border:1px solid #333;border-radius:8px;padding:20px;"><h2 style="font-size:0.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Info</h2><p style="margin:8px 0;"><strong>Name:</strong> ' + head.name + '</p><p style="margin:8px 0;"><strong>Rarity:</strong> <span style="color:#5b9bd5;">' + head.rarity + '</span></p>' + (head.in_stock ? '<p style="margin:8px 0;color:#7ac74f;">✓ In Stock</p>' : '<p style="margin:8px 0;color:#e07070;">Out of Stock</p>') + '</div><div style="background:#242424;border:1px solid #333;border-radius:8px;padding:20px;"><h2 style="font-size:0.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Price</h2>' + priceHtml + '</div>' + tagsHtml + '</div></div><p style="color:#999;font-size:0.85rem;margin-top:40px;text-align:center;">Drag to rotate • Click "Run" again to see a different random head</p></div>';
+
+        // Initialize viewer
+        const canvas = document.getElementById('headCanvas');
+        new HeadPreviewComponent(canvas, head.texture_url, { mode: 'expanded' });
+    } catch (err) {
+        console.error(err);
+        app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;color:#e07070;">' + err.message + '</div>';
+    }
+})();
