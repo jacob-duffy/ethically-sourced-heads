@@ -1,6 +1,9 @@
 import './style.css';
-import { loadHeads, getHeads } from './data.js';
+import { loadHeads, getHeads, getRarities, getTags, filterHeads, sortHeads, paginateHeads } from './data.js';
 import { createHeadGrid } from './components/head-grid.js';
+import { createSearchBar } from './components/search-bar.js';
+import { createFilterPanel } from './components/filter-panel.js';
+import { createPagination } from './components/pagination.js';
 
 const app = document.querySelector('#app');
 
@@ -11,9 +14,9 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
 (async () => {
     try {
         await loadHeads();
-        const heads = getHeads();
+        const allHeads = getHeads();
 
-        if (heads.length === 0) {
+        if (allHeads.length === 0) {
             app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;color:#e07070;">No heads found in heads.json</div>';
             return;
         }
@@ -45,7 +48,7 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
         `;
 
         const subtitle = document.createElement('p');
-        subtitle.textContent = heads.length + ' custom heads available';
+        subtitle.textContent = allHeads.length + ' custom heads available';
         subtitle.style.cssText = `
             font-size:0.95rem;
             color:#999;
@@ -56,23 +59,113 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
         header.appendChild(subtitle);
         catalogContainer.appendChild(header);
 
-        // Grid container
-        const gridWrapper = document.createElement('div');
-        gridWrapper.style.cssText = `
-            max-width:1200px;
-            margin:0 auto;
-        `;
+        // Content container
+        const content = document.createElement('div');
 
-        const grid = createHeadGrid(heads, (head) => {
-            console.log('Clicked head:', head.name);
-            // TODO: Open expanded modal when clicking a card
-        });
+        // State
+        let currentPage = 1;
+        let currentSearch = '';
+        let currentFilters = { rarity: '', tags: [], inStockOnly: false };
+        let currentSort = 'name-asc';
+        const ITEMS_PER_PAGE = 24;
 
-        gridWrapper.appendChild(grid);
-        catalogContainer.appendChild(gridWrapper);
+        // Render function
+        const render = () => {
+            // Apply search and filters
+            let filtered = filterHeads({
+                search: currentSearch,
+                rarity: currentFilters.rarity,
+                tags: currentFilters.tags,
+                inStockOnly: currentFilters.inStockOnly,
+            });
 
+            // Apply sort
+            filtered = sortHeads(filtered, currentSort);
+
+            // Apply pagination
+            const paginated = paginateHeads(filtered, currentPage, ITEMS_PER_PAGE);
+
+            // Clear content
+            content.innerHTML = '';
+
+            // Search bar
+            content.appendChild(createSearchBar((query) => {
+                currentSearch = query;
+                currentPage = 1;
+                render();
+            }));
+
+            // Filter panel
+            content.appendChild(createFilterPanel(
+                getRarities(),
+                getTags(),
+                (filters) => {
+                    currentFilters = filters;
+                    currentPage = 1;
+                    render();
+                },
+                (sortKey) => {
+                    currentSort = sortKey;
+                    currentPage = 1;
+                    render();
+                },
+                { rarity: currentFilters.rarity, tags: currentFilters.tags, inStockOnly: currentFilters.inStockOnly, sort: currentSort }
+            ));
+
+            // Results count
+            const resultsInfo = document.createElement('div');
+            resultsInfo.style.cssText = `
+                max-width:1200px;
+                margin:0 auto 24px;
+                color:#999;
+                font-size:0.9rem;
+            `;
+            resultsInfo.textContent = `${filtered.length} result${filtered.length !== 1 ? 's' : ''}`;
+            content.appendChild(resultsInfo);
+
+            // Grid
+            if (paginated.items.length) {
+                const gridWrapper = document.createElement('div');
+                gridWrapper.style.cssText = `
+                    max-width:1200px;
+                    margin:0 auto;
+                `;
+
+                const grid = createHeadGrid(paginated.items, (head) => {
+                    console.log('Clicked head:', head.name);
+                    // TODO: Open expanded modal when clicking a card
+                });
+
+                gridWrapper.appendChild(grid);
+                content.appendChild(gridWrapper);
+
+                // Pagination
+                content.appendChild(createPagination(paginated.page, paginated.totalPages, (newPage) => {
+                    currentPage = newPage;
+                    render();
+                    // Scroll to top
+                    catalogContainer.scrollIntoView({ behavior: 'smooth' });
+                }));
+            } else {
+                const noResults = document.createElement('div');
+                noResults.style.cssText = `
+                    max-width:1200px;
+                    margin:0 auto;
+                    padding:40px 20px;
+                    text-align:center;
+                    color:#999;
+                `;
+                noResults.textContent = 'No heads match your filters.';
+                content.appendChild(noResults);
+            }
+        };
+
+        catalogContainer.appendChild(content);
         app.innerHTML = '';
         app.appendChild(catalogContainer);
+
+        // Initial render
+        render();
     } catch (err) {
         console.error(err);
         app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;color:#e07070;">' + err.message + '</div>';

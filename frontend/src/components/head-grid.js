@@ -114,6 +114,17 @@ export function createHeadCard(head, onCardClick) {
     );
     observer.observe(card);
 
+    // Check if card is already visible (happens after filter/re-render)
+    // Force a check by triggering a layout recalculation
+    requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        if (!viewerInitialized && rect.top < window.innerHeight && rect.bottom > 0) {
+            viewerInitialized = true;
+            new HeadPreviewComponent(canvas, head.texture_url, { mode: "preview" });
+            observer.unobserve(card);
+        }
+    });
+
     // Card click handler
     if (onCardClick) {
         card.addEventListener("click", () => onCardClick(head));

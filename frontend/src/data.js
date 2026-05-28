@@ -94,7 +94,7 @@ export function filterHeads({ search = "", rarity = "", tags = [], inStockOnly =
 // ─── Sort ─────────────────────────────────────────────────────────────────────
 
 /**
- * @typedef {"name-asc"|"name-desc"|"rarity-asc"|"rarity-desc"|"price-asc"|"price-desc"} SortKey
+ * @typedef {"name-asc"|"name-desc"|"rarity-asc"|"rarity-desc"|"price-asc"|"price-desc"|"tags-asc"} SortKey
  */
 
 /**
@@ -130,6 +130,9 @@ export function sortHeads(heads, sortKey = "name-asc") {
             break;
         case "price-desc":
             copy.sort((a, b) => priceValue(b) - priceValue(a));
+            break;
+        case "tags-asc":
+            copy.sort((a, b) => (a.tags?.length ?? 0) - (b.tags?.length ?? 0));
             break;
     }
 
