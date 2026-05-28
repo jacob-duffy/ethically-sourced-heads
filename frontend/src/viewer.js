@@ -174,9 +174,12 @@ export class HeadPreviewComponent {
         this._rotating = true;
     }
 
-    /** Stop auto-rotation (called automatically on mouseleave in preview mode). */
+    /** Stop auto-rotation and snap back to initial angle (called automatically on mouseleave in preview mode). */
     stopHoverRotation() {
         this._rotating = false;
+        // Snap back to initial angle
+        this._yaw   = PREVIEW_INITIAL_YAW;
+        this._pitch = PREVIEW_INITIAL_PITCH;
     }
 
     // ─── Public API — Expanded mode ───────────────────────────────────────────

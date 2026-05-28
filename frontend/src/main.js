@@ -1,6 +1,6 @@
 import './style.css';
 import { loadHeads, getHeads } from './data.js';
-import { HeadPreviewComponent } from './viewer.js';
+import { createHeadGrid } from './components/head-grid.js';
 
 const app = document.querySelector('#app');
 
@@ -18,27 +18,61 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
             return;
         }
 
-        // Pick a random head
-        const head = heads[Math.floor(Math.random() * heads.length)];
+        // Render catalog
+        const catalogContainer = document.createElement('div');
+        catalogContainer.style.cssText = `
+            background:#1a1a1a;
+            color:#e0e0e0;
+            font-family:'Segoe UI',sans-serif;
+            padding:40px 20px;
+            min-height:100vh;
+        `;
 
-        // Build price HTML
-        let priceHtml = '';
-        if (head.price.diamonds) priceHtml += '<p style="margin:8px 0;">💎 ' + head.price.diamonds + ' diamond' + (head.price.diamonds !== 1 ? 's' : '') + '</p>';
-        if (head.price.emeralds) priceHtml += '<p style="margin:8px 0;">💚 ' + head.price.emeralds + ' emerald' + (head.price.emeralds !== 1 ? 's' : '') + '</p>';
-        if (head.price.iron) priceHtml += '<p style="margin:8px 0;">⬜ ' + head.price.iron + ' iron' + (head.price.iron !== 1 ? 's' : '') + '</p>';
-        if (Object.keys(head.price).length === 0) priceHtml = '<p style="color:#999;">Price not set</p>';
+        const header = document.createElement('div');
+        header.style.cssText = `
+            max-width:1200px;
+            margin:0 auto 40px;
+            text-align:center;
+        `;
 
-        let tagsHtml = '';
-        if (head.tags.length) {
-            const tagSpans = head.tags.map(t => '<span style="background:#3a6ea8;color:#fff;padding:6px 12px;border-radius:4px;font-size:0.85rem;">' + t + '</span>').join('');
-            tagsHtml = '<div style="background:#242424;border:1px solid #333;border-radius:8px;padding:20px;"><h2 style="font-size:0.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Tags</h2><div style="display:flex;flex-wrap:wrap;gap:8px;">' + tagSpans + '</div></div>';
-        }
+        const title = document.createElement('h1');
+        title.textContent = 'Ethically Sourced Heads';
+        title.style.cssText = `
+            font-size:2rem;
+            margin:0 0 12px;
+            color:#fff;
+            letter-spacing:0.5px;
+        `;
 
-        app.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;padding:40px 20px;min-height:100vh;background:#1a1a1a;color:#e0e0e0;font-family:\'Segoe UI\',sans-serif;"><h1 style="font-size:1.6rem;margin-bottom:28px;color:#fff;letter-spacing:0.5px;">Random Head Sample</h1><div style="display:flex;gap:32px;max-width:800px;width:100%;"><div style="flex:0 0 auto;"><div style="background:#242424;border:1px solid #333;border-radius:8px;padding:20px;display:flex;flex-direction:column;align-items:center;"><h2 style="font-size:0.95rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Preview</h2><canvas id="headCanvas" width="320" height="320" style="border:2px solid #444;border-radius:4px;"></canvas></div></div><div style="flex:1;display:flex;flex-direction:column;gap:20px;justify-content:center;"><div style="background:#242424;border:1px solid #333;border-radius:8px;padding:20px;"><h2 style="font-size:0.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Info</h2><p style="margin:8px 0;"><strong>Name:</strong> ' + head.name + '</p><p style="margin:8px 0;"><strong>Rarity:</strong> <span style="color:#5b9bd5;">' + head.rarity + '</span></p>' + (head.in_stock ? '<p style="margin:8px 0;color:#7ac74f;">✓ In Stock</p>' : '<p style="margin:8px 0;color:#e07070;">Out of Stock</p>') + '</div><div style="background:#242424;border:1px solid #333;border-radius:8px;padding:20px;"><h2 style="font-size:0.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Price</h2>' + priceHtml + '</div>' + tagsHtml + '</div></div><p style="color:#999;font-size:0.85rem;margin-top:40px;text-align:center;">Drag to rotate • Click "Run" again to see a different random head</p></div>';
+        const subtitle = document.createElement('p');
+        subtitle.textContent = heads.length + ' custom heads available';
+        subtitle.style.cssText = `
+            font-size:0.95rem;
+            color:#999;
+            margin:0;
+        `;
 
-        // Initialize viewer
-        const canvas = document.getElementById('headCanvas');
-        new HeadPreviewComponent(canvas, head.texture_url, { mode: 'expanded' });
+        header.appendChild(title);
+        header.appendChild(subtitle);
+        catalogContainer.appendChild(header);
+
+        // Grid container
+        const gridWrapper = document.createElement('div');
+        gridWrapper.style.cssText = `
+            max-width:1200px;
+            margin:0 auto;
+        `;
+
+        const grid = createHeadGrid(heads, (head) => {
+            console.log('Clicked head:', head.name);
+            // TODO: Open expanded modal when clicking a card
+        });
+
+        gridWrapper.appendChild(grid);
+        catalogContainer.appendChild(gridWrapper);
+
+        app.innerHTML = '';
+        app.appendChild(catalogContainer);
     } catch (err) {
         console.error(err);
         app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;color:#e07070;">' + err.message + '</div>';
