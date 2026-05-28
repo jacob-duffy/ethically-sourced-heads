@@ -5,7 +5,6 @@
 ```
 civmc-headshop/
 ├── README.md                    # Getting started, quick links to docs
-├── target.md                    # Full technical specification (reference document)
 │
 ├── docs/                        # Detailed documentation
 │   ├── OVERVIEW.md             # Project overview, inventory, rarity, pricing
