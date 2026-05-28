@@ -1,4 +1,4 @@
-const HEADS_JSON_URL = "/heads.json";
+const HEADS_JSON_URL = import.meta.env.BASE_URL + "heads.json";
 
 /**
  * @typedef {Object} HeadPrice
