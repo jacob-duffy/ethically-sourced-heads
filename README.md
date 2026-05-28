@@ -1,4 +1,4 @@
-# CivMC Head Shop
+# Ethically Sourced Heads
 
 A static-first storefront for a custom player head shop on CivMC. Browse 1,280+ custom heads with real-time 3D WebGL previews, search, filter, and join Discord to order.
 
@@ -12,8 +12,8 @@ A static-first storefront for a custom player head shop on CivMC. Browse 1,280+ 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourname/civmc-headshop.git
-   cd civmc-headshop
+   git clone https://github.com/jacob-duffy/ethically-sourced-heads.git
+   cd ethically-sourced-heads
    ```
 
 2. **Setup Frontend:**
