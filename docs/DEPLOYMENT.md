@@ -69,11 +69,5 @@
    npm run dev
    ```
 3. Open `http://localhost:5173` in browser
-4. Aggregation script setup:
-   ```bash
-   cd scripts
-   python -m venv .venv
-   .venv\Scripts\activate    # Windows; use ".venv/bin/activate" on macOS/Linux
-   # No dependencies to install — uses only Python built-in libraries
-   ```
-5. To test aggregation: `cd .. && python scripts/aggregate.py` (place sample JSMacros files in `scripts/input/untracked/` first)
+4. To test aggregation: `python scripts/aggregate.py` (place sample JSMacros files in `scripts/input/untracked/` first)
+   - No dependencies to install — uses only Python built-in libraries

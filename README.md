@@ -25,12 +25,7 @@ A static-first storefront for a custom player head shop on CivMC. Browse 1,280+ 
 
 3. **Setup Aggregation Script:**
    ```bash
-   cd scripts
-   python -m venv .venv
-   .venv\Scripts\activate  # Windows
-   # source .venv/bin/activate  # macOS/Linux
    # No dependencies to install — uses only Python built-in libraries
-   cd ..
    python scripts/aggregate.py --help  # Optional: see available options
    ```
 

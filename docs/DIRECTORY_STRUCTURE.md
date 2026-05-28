@@ -50,7 +50,6 @@ civmc-headshop/
 │           └── {hash}.png
 │
 ├── scripts/                     # Local aggregation & utilities
-│   ├── .venv/                  # Python virtual environment (git-ignored)
 │   ├── macros/                 # JSMacros macro files
 │   │   └── head-tracker.js     # Macro to export heads to input/untracked/
 │   ├── input/                  # Head data file directory
@@ -60,7 +59,7 @@ civmc-headshop/
 │   │       └── head_data_*.json  # Moved here after aggregation
 │   └── aggregate.py            # Main aggregation script
 │
-├── .gitignore                  # Ignore: venv/, node_modules/, dist/, .env
+├── .gitignore                  # Ignore: node_modules/, dist/, Python artifacts
 └── .github/
     └── workflows/
         └── deploy.yml          # GitHub Actions: build frontend and deploy to GitHub Pages
@@ -104,7 +103,6 @@ Reference documentation for developers and maintainers.
 | `scripts/input/tracked/` | Archive of processed head data files | Yes (git-tracked) |
 | `frontend/dist/` | Vite build output (deployed by GitHub Actions) | No (git-ignored) |
 | `frontend/node_modules/` | npm packages | No (git-ignored) |
-| `scripts/.venv/` | Python virtual environment | No (git-ignored) |
 | `frontend/public/heads.json` | Generated inventory (source of truth) | **Yes** |
 | `frontend/public/textures/*.png` | Downloaded textures | **Yes** |
 
@@ -142,11 +140,7 @@ cd frontend
 npm install
 npm run dev                     # http://localhost:5173
 
-# Aggregation script
-cd ../scripts
-python -m venv .venv
-.venv\Scripts\activate         # Windows; use ".venv/bin/activate" on macOS/Linux
-# No dependencies to install — uses only Python built-in libraries
+# Aggregation script (no dependencies needed)
 cd ..
 python scripts/aggregate.py    # Requires JSMacros files in scripts/input/untracked/
 ```
