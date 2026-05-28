@@ -70,6 +70,25 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
         let currentSort = 'name-asc';
         const ITEMS_PER_PAGE = 12;
 
+        // Create persistent search bar (doesn't get recreated on render)
+        const searchBarContainer = document.createElement('div');
+        const searchBar = createSearchBar((query) => {
+            currentSearch = query;
+            currentPage = 1;
+            render();
+        });
+        searchBarContainer.appendChild(searchBar);
+
+        // Container for filter panel (will be recreated to update state)
+        const filterContainer = document.createElement('div');
+
+        // Container for results (grid, pagination)
+        const resultsContainer = document.createElement('div');
+
+        content.appendChild(searchBarContainer);
+        content.appendChild(filterContainer);
+        content.appendChild(resultsContainer);
+
         // Render function
         const render = () => {
             // Apply search and filters
@@ -86,18 +105,9 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
             // Apply pagination
             const paginated = paginateHeads(filtered, currentPage, ITEMS_PER_PAGE);
 
-            // Clear content
-            content.innerHTML = '';
-
-            // Search bar
-            content.appendChild(createSearchBar((query) => {
-                currentSearch = query;
-                currentPage = 1;
-                render();
-            }));
-
-            // Filter panel
-            content.appendChild(createFilterPanel(
+            // Update filter panel
+            filterContainer.innerHTML = '';
+            filterContainer.appendChild(createFilterPanel(
                 getRarities(),
                 getTags(),
                 (filters) => {
@@ -113,6 +123,9 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
                 { rarity: currentFilters.rarity, tags: currentFilters.tags, inStockOnly: currentFilters.inStockOnly, sort: currentSort }
             ));
 
+            // Update results container
+            resultsContainer.innerHTML = '';
+
             // Results count
             const resultsInfo = document.createElement('div');
             resultsInfo.style.cssText = `
@@ -122,7 +135,7 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
                 font-size:0.9rem;
             `;
             resultsInfo.textContent = `${filtered.length} result${filtered.length !== 1 ? 's' : ''}`;
-            content.appendChild(resultsInfo);
+            resultsContainer.appendChild(resultsInfo);
 
             // Grid
             if (paginated.items.length) {
@@ -137,10 +150,10 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
                 });
 
                 gridWrapper.appendChild(grid);
-                content.appendChild(gridWrapper);
+                resultsContainer.appendChild(gridWrapper);
 
                 // Pagination
-                content.appendChild(createPagination(paginated.page, paginated.totalPages, (newPage) => {
+                resultsContainer.appendChild(createPagination(paginated.page, paginated.totalPages, (newPage) => {
                     currentPage = newPage;
                     render();
                     // Scroll to top
@@ -156,7 +169,7 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
                     color:#999;
                 `;
                 noResults.textContent = 'No heads match your filters.';
-                content.appendChild(noResults);
+                resultsContainer.appendChild(noResults);
             }
         };
 
