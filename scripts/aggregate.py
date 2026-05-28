@@ -235,7 +235,7 @@ def main() -> None:
     remote_data = load_frontend_data(directories["frontend"])
     update_frontend_data(local_data, remote_data, directories["frontend"])
     get_missing_textures(remote_data, directories["texture"])
-    # commit_changes()
+    commit_changes()
 
 # -----------------------------------------------------------------------------
 
