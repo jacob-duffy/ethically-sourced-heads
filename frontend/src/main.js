@@ -68,7 +68,7 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
         let currentSearch = '';
         let currentFilters = { rarity: '', tags: [], inStockOnly: false };
         let currentSort = 'name-asc';
-        const ITEMS_PER_PAGE = 24;
+        const ITEMS_PER_PAGE = 12;
 
         // Render function
         const render = () => {

@@ -1,12 +1,5 @@
 import { HeadPreviewComponent } from "../viewer.js";
 
-/**
- * Renders a single head card with a small preview canvas, name, rarity, and price.
- * Canvas is initialized lazily when it enters the viewport (via Intersection Observer).
- * @param {Object} head - Head data object
- * @param {Function} [onCardClick] - Optional callback when card is clicked
- * @returns {HTMLElement}
- */
 export function createHeadCard(head, onCardClick) {
     const card = document.createElement("div");
     card.style.cssText = `
@@ -22,7 +15,6 @@ export function createHeadCard(head, onCardClick) {
         gap:12px;
     `;
 
-    // Hover effect
     card.addEventListener("mouseenter", () => {
         card.style.borderColor = "#5b9bd5";
         card.style.transform = "scale(1.02)";
@@ -32,7 +24,6 @@ export function createHeadCard(head, onCardClick) {
         card.style.transform = "scale(1)";
     });
 
-    // Canvas for preview
     const canvas = document.createElement("canvas");
     canvas.width = 160;
     canvas.height = 160;
@@ -44,16 +35,13 @@ export function createHeadCard(head, onCardClick) {
         background:#1a1a1a;
     `;
 
-    // Info section
     const info = document.createElement("div");
     info.style.cssText = "display:flex;flex-direction:column;gap:8px;";
 
-    // Name
     const name = document.createElement("p");
     name.textContent = head.name;
     name.style.cssText = "margin:0;font-weight:bold;font-size:0.95rem;color:#fff;overflow:hidden;text-overflow:ellipsis;";
 
-    // Rarity badge
     const rarityBadge = document.createElement("div");
     rarityBadge.textContent = head.rarity;
     rarityBadge.style.cssText = `
@@ -67,23 +55,21 @@ export function createHeadCard(head, onCardClick) {
         width:fit-content;
     `;
 
-    // Stock status
     const stockStatus = document.createElement("p");
-    stockStatus.textContent = head.in_stock ? "✓ In Stock" : "Out of Stock";
+    stockStatus.textContent = head.in_stock ? "? In Stock" : "Out of Stock";
     stockStatus.style.cssText = `
         margin:0;
         font-size:0.85rem;
         color:${head.in_stock ? "#7ac74f" : "#e07070"};
     `;
 
-    // Price summary
     const priceItems = [];
-    if (head.price.diamonds) priceItems.push(`💎 ${head.price.diamonds}`);
-    if (head.price.emeralds) priceItems.push(`💚 ${head.price.emeralds}`);
-    if (head.price.iron) priceItems.push(`⬜ ${head.price.iron}`);
+    if (head.price.diamonds) priceItems.push(`\u{1F48E} ${head.price.diamonds}`);
+    if (head.price.emeralds) priceItems.push(`\u{1F49A} ${head.price.emeralds}`);
+    if (head.price.iron) priceItems.push(`\u{2B1C} ${head.price.iron}`);
 
     const priceSummary = document.createElement("p");
-    priceSummary.textContent = priceItems.length ? priceItems.join(" • ") : "Price TBD";
+    priceSummary.textContent = priceItems.length ? priceItems.join(" \u2022 ") : "Price TBD";
     priceSummary.style.cssText = `
         margin:0;
         font-size:0.8rem;
@@ -100,32 +86,29 @@ export function createHeadCard(head, onCardClick) {
     card.appendChild(canvas);
     card.appendChild(info);
 
-    // Lazy-load viewer when card enters viewport
-    let viewerInitialized = false;
+    let initialized = false;
+    const initViewer = () => {
+        if (initialized) return;
+        initialized = true;
+        new HeadPreviewComponent(canvas, head.texture_url, { mode: "preview" });
+    };
+
     const observer = new IntersectionObserver(
         (entries) => {
-            if (entries[0].isIntersecting && !viewerInitialized) {
-                viewerInitialized = true;
-                new HeadPreviewComponent(canvas, head.texture_url, { mode: "preview" });
-                observer.unobserve(card);
+            if (entries[0].isIntersecting) {
+                initViewer();
+                observer.disconnect();
             }
         },
         { threshold: 0.1 },
     );
     observer.observe(card);
 
-    // Check if card is already visible (happens after filter/re-render)
-    // Force a check by triggering a layout recalculation
     requestAnimationFrame(() => {
         const rect = card.getBoundingClientRect();
-        if (!viewerInitialized && rect.top < window.innerHeight && rect.bottom > 0) {
-            viewerInitialized = true;
-            new HeadPreviewComponent(canvas, head.texture_url, { mode: "preview" });
-            observer.unobserve(card);
-        }
+        if (rect.top < window.innerHeight && rect.bottom > 0) initViewer();
     });
 
-    // Card click handler
     if (onCardClick) {
         card.addEventListener("click", () => onCardClick(head));
     }
@@ -133,17 +116,11 @@ export function createHeadCard(head, onCardClick) {
     return card;
 }
 
-/**
- * Renders a grid of head cards.
- * @param {Object[]} heads - Array of head objects
- * @param {Function} [onCardClick] - Optional callback when a card is clicked
- * @returns {HTMLElement}
- */
 export function createHeadGrid(heads, onCardClick) {
     const container = document.createElement("div");
     container.style.cssText = `
         display:grid;
-        grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+        grid-template-columns:repeat(4,1fr);
         gap:16px;
         padding:0;
     `;
