@@ -1,26 +1,9 @@
-/**
- * Creates a filter panel with rarity dropdown, sort dropdown, and tag multi-select.
- * @param {string[]} rarities - Available rarity values
- * @param {string[]} tags - Available tag values
- * @param {Function} onFilterChange - Callback with ({ rarity, tags, inStockOnly })
- * @param {Function} onSortChange - Callback with (sortKey: string)
- * @param {Object} currentState - Current filter state ({ rarity, tags, inStockOnly, sort })
- * @returns {HTMLElement}
- */
+import "./filter-panel.css";
+
 export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, currentState = {}) {
     const container = document.createElement("div");
-    container.style.cssText = `
-        display:flex;
-        flex-wrap:wrap;
-        gap:16px;
-        margin-bottom:24px;
-        max-width:1200px;
-        margin-left:auto;
-        margin-right:auto;
-        align-items:center;
-    `;
+    container.className = "filter-panel";
 
-    // Track state (initialize from currentState)
     let selectedRarity = currentState.rarity || "";
     let selectedTags = new Set(currentState.tags || []);
     let inStockOnly = currentState.inStockOnly || false;
@@ -34,35 +17,21 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
         });
     };
 
-    // ─── Rarity Dropdown ──────────────────────────────────────────────────────
-
     const rarityContainer = document.createElement("div");
-    rarityContainer.style.cssText = "display:flex;flex-direction:column;gap:6px;";
+    rarityContainer.className = "filter-group";
 
     const rarityLabel = document.createElement("label");
     rarityLabel.textContent = "Rarity:";
-    rarityLabel.style.cssText = "font-size:0.8rem;color:#999;text-transform:uppercase;letter-spacing:0.5px;";
+    rarityLabel.className = "filter-label";
 
     const raritySelect = document.createElement("select");
-    raritySelect.style.cssText = `
-        padding:8px 12px;
-        background:#2c2c2c;
-        border:1px solid #444;
-        border-radius:6px;
-        color:#e0e0e0;
-        font-size:0.9rem;
-        cursor:pointer;
-        outline:none;
-        transition:border-color 0.2s;
-    `;
+    raritySelect.className = "filter-select";
 
-    // Add "All" option
     const allOption = document.createElement("option");
     allOption.value = "";
     allOption.textContent = "All";
     raritySelect.appendChild(allOption);
 
-    // Add rarity options
     for (const rarity of rarities) {
         const option = document.createElement("option");
         option.value = rarity;
@@ -71,8 +40,6 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
     }
 
     raritySelect.value = selectedRarity;
-    raritySelect.addEventListener("focus", () => (raritySelect.style.borderColor = "#5b9bd5"));
-    raritySelect.addEventListener("blur", () => (raritySelect.style.borderColor = "#444"));
     raritySelect.addEventListener("change", () => {
         selectedRarity = raritySelect.value;
         notifyChange();
@@ -82,27 +49,15 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
     rarityContainer.appendChild(raritySelect);
     container.appendChild(rarityContainer);
 
-    // ─── Sort Dropdown ────────────────────────────────────────────────────────
-
     const sortContainer = document.createElement("div");
-    sortContainer.style.cssText = "display:flex;flex-direction:column;gap:6px;";
+    sortContainer.className = "filter-group";
 
     const sortLabel = document.createElement("label");
     sortLabel.textContent = "Sort By:";
-    sortLabel.style.cssText = "font-size:0.8rem;color:#999;text-transform:uppercase;letter-spacing:0.5px;";
+    sortLabel.className = "filter-label";
 
     const sortSelect = document.createElement("select");
-    sortSelect.style.cssText = `
-        padding:8px 12px;
-        background:#2c2c2c;
-        border:1px solid #444;
-        border-radius:6px;
-        color:#e0e0e0;
-        font-size:0.9rem;
-        cursor:pointer;
-        outline:none;
-        transition:border-color 0.2s;
-    `;
+    sortSelect.className = "filter-select";
 
     const sortOptions = [
         { value: "name-asc", label: "Name (A-Z)" },
@@ -122,8 +77,6 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
     }
 
     sortSelect.value = selectedSort;
-    sortSelect.addEventListener("focus", () => (sortSelect.style.borderColor = "#5b9bd5"));
-    sortSelect.addEventListener("blur", () => (sortSelect.style.borderColor = "#444"));
     sortSelect.addEventListener("change", () => {
         selectedSort = sortSelect.value;
         if (onSortChange) onSortChange(selectedSort);
@@ -133,73 +86,40 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
     sortContainer.appendChild(sortSelect);
     container.appendChild(sortContainer);
 
-    // ─── Tag Checkboxes ───────────────────────────────────────────────────────
-
     if (tags.length) {
         const tagsContainer = document.createElement("div");
-        tagsContainer.style.cssText = "display:flex;flex-direction:column;gap:6px;";
+        tagsContainer.className = "filter-group";
 
         const tagsLabel = document.createElement("label");
         tagsLabel.textContent = "Tags:";
-        tagsLabel.style.cssText = "font-size:0.8rem;color:#999;text-transform:uppercase;letter-spacing:0.5px;";
+        tagsLabel.className = "filter-label";
         tagsContainer.appendChild(tagsLabel);
 
         const tagsGrid = document.createElement("div");
-        tagsGrid.style.cssText = "display:flex;flex-wrap:wrap;gap:8px;";
+        tagsGrid.className = "tags-grid";
 
         for (const tag of tags) {
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.id = `tag-${tag}`;
             checkbox.value = tag;
+            checkbox.className = "tag-checkbox";
             checkbox.checked = selectedTags.has(tag);
 
             const label = document.createElement("label");
             label.htmlFor = `tag-${tag}`;
             label.textContent = tag;
-            label.style.cssText = `
-                display:flex;
-                align-items:center;
-                gap:6px;
-                padding:6px 10px;
-                background:#242424;
-                border:1px solid #444;
-                border-radius:4px;
-                cursor:pointer;
-                font-size:0.85rem;
-                transition:all 0.2s;
-            `;
-
-            checkbox.style.cssText = "cursor:pointer;";
-
-            // Apply initial styling if already selected
-            if (checkbox.checked) {
-                label.style.background = "#3a6ea8";
-                label.style.borderColor = "#5b9bd5";
-            }
+            label.className = `tag-label ${checkbox.checked ? "tag-checked" : ""}`;
 
             checkbox.addEventListener("change", () => {
                 if (checkbox.checked) {
                     selectedTags.add(tag);
-                    label.style.background = "#3a6ea8";
-                    label.style.borderColor = "#5b9bd5";
+                    label.classList.add("tag-checked");
                 } else {
                     selectedTags.delete(tag);
-                    label.style.background = "#242424";
-                    label.style.borderColor = "#444";
+                    label.classList.remove("tag-checked");
                 }
                 notifyChange();
-            });
-
-            label.addEventListener("mouseenter", () => {
-                if (!checkbox.checked) {
-                    label.style.borderColor = "#5b9bd5";
-                }
-            });
-            label.addEventListener("mouseleave", () => {
-                if (!checkbox.checked) {
-                    label.style.borderColor = "#444";
-                }
             });
 
             label.insertBefore(checkbox, label.firstChild);
@@ -210,10 +130,8 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
         container.appendChild(tagsContainer);
     }
 
-    // ─── Stock Status Toggle ──────────────────────────────────────────────────
-
     const stockContainer = document.createElement("div");
-    stockContainer.style.cssText = "display:flex;align-items:center;gap:8px;";
+    stockContainer.className = "stock-container";
 
     const stockCheckbox = document.createElement("input");
     stockCheckbox.type = "checkbox";
@@ -223,7 +141,7 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
     const stockLabel = document.createElement("label");
     stockLabel.htmlFor = "in-stock-only";
     stockLabel.textContent = "In Stock Only";
-    stockLabel.style.cssText = "font-size:0.85rem;cursor:pointer;color:#e0e0e0;";
+    stockLabel.className = "stock-label";
 
     stockCheckbox.addEventListener("change", () => {
         inStockOnly = stockCheckbox.checked;

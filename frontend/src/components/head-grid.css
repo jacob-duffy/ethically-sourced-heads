@@ -1,0 +1,80 @@
+.head-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 0;
+}
+
+.head-card {
+  background: #242424;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.head-card:hover {
+  border-color: #5b9bd5;
+  transform: scale(1.02);
+}
+
+.head-card-canvas {
+  border: 1px solid #444;
+  border-radius: 4px;
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  background: #1a1a1a;
+}
+
+.head-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.head-card-name {
+  margin: 0;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.head-card-rarity {
+  display: inline-block;
+  background: #5b9bd5;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: fit-content;
+}
+
+.head-card-stock {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.head-card-stock.in-stock {
+  color: #7ac74f;
+}
+
+.head-card-stock.out-of-stock {
+  color: #e07070;
+}
+
+.head-card-price {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
