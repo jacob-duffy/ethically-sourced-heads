@@ -13,7 +13,7 @@ const HEADS_JSON_URL = import.meta.env.BASE_URL + "heads.json";
  * @property {string} rarity
  * @property {string} texture_b64
  * @property {string} texture_url
- * @property {boolean} in_stock
+ * @property {number} stock_level
  * @property {HeadPrice} price
  * @property {string[]} tags
  */

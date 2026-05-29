@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import datetime
+import hashlib
 import json
 import logging
 import subprocess
@@ -9,6 +10,7 @@ import urllib.error
 import urllib.request
 
 from dataclasses import dataclass, field
+from collections import Counter
 from pathlib import Path
 
 
@@ -28,22 +30,34 @@ log.addHandler(handler)
 # -----------------------------------------------------------------------------
 
 
+def decode_base64(b64: str, to_utf8: bool = True) -> str:
+    pad = 4 - (len(b64) % 4)
+    if pad != 4:
+        b64 += '=' * pad
+    decoded = base64.b64decode(b64)
+    if to_utf8:
+        decoded = decoded.decode("utf-8")
+    return decoded
+
+
 @dataclass
 class PlayerHeadData:
     name: str
     rarity: str
     texture_b64: str
     texture_url: str
-    in_stock: bool = True
+    stock_level: int = 0
     price: dict = field(default_factory=dict)
     tags: list[str] = field(default_factory=list)
 
+    def __hash__(self) -> int:
+        decoded = decode_base64(self.texture_b64, False)
+        digest = hashlib.sha256(decoded).digest()
+        return int.from_bytes(digest, 'big')
+
     @staticmethod
-    def parse_texture_url(texture_b64) -> str:
-        pad = 4 - (len(texture_b64) % 4)
-        if pad != 4:
-            texture_b64 += '=' * pad
-        texture_data = json.loads(base64.b64decode(texture_b64).decode("utf-8"))
+    def parse_texture_url(texture_b64: str) -> str:
+        texture_data = json.loads(decode_base64(texture_b64))
         return texture_data["textures"]["SKIN"]["url"]
 
     @classmethod
@@ -65,7 +79,6 @@ class PlayerHeadEncoder(json.JSONEncoder):
 
 
 DataCache = dict[str, PlayerHeadData]
-
 
 # -----------------------------------------------------------------------------
 
@@ -92,7 +105,8 @@ def load_untracked_data(input_dir: Path, output_dir: Path) -> DataCache:
     PlayerHeadData objects. Successfully loaded items get sent to the output dir
     and the failed items stay in the original file in the input dir.
     """
-    data = {}
+    dataset = []
+    dataset_unique = {}
     filepaths = list(input_dir.glob("*.json"))
 
     if not filepaths:
@@ -101,14 +115,14 @@ def load_untracked_data(input_dir: Path, output_dir: Path) -> DataCache:
 
     for path in filepaths:
         results = {True: [], False: []}
-        player_heads = {}
 
         # Load raw nbt data into player heads
         with open(path, encoding="utf-8") as file:
             json_data = json.load(file)
         for d in json_data:
             if ph := PlayerHeadData.from_raw_input(d):
-                player_heads[ph.texture_b64] = ph
+                dataset.append(ph)
+                dataset_unique[ph.texture_b64] = ph
             results[ph is not None].append(d)
 
         # Write successful entries to output directory
@@ -125,11 +139,14 @@ def load_untracked_data(input_dir: Path, output_dir: Path) -> DataCache:
             # Delete the file if all entries were successful
             path.unlink()
 
-        data.update(player_heads)
+    # track stocks
+    stock_counter = Counter(dataset)
+    for k, v in stock_counter.items():
+        dataset_unique[k.texture_b64].stock_level = v
 
-    log.info(f"{len(data)} unique heads loaded from {len(filepaths)} untracked files.")
+    log.info(f"{len(dataset)} heads loaded from {len(filepaths)} untracked files.")
 
-    return data
+    return dataset_unique
 
 
 def load_frontend_data(frontend_dir: Path) -> DataCache:
@@ -175,7 +192,7 @@ def update_frontend_data(local: DataCache, remote: DataCache, frontend_dir: Path
     remote.update(local)
     for k in remote:
         if k not in local:
-            remote[k].in_stock = False
+            remote[k].stock_level = 0
 
     output = {
         "generated_at": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
@@ -235,7 +252,7 @@ def main() -> None:
     remote_data = load_frontend_data(directories["frontend"])
     update_frontend_data(local_data, remote_data, directories["frontend"])
     get_missing_textures(remote_data, directories["texture"])
-    commit_changes()
+    # commit_changes()
 
 # -----------------------------------------------------------------------------
 

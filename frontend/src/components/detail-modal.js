@@ -75,8 +75,9 @@ export function createDetailModal(head, onClose) {
     stockLabel.className = "detail-modal-section-label";
 
     const stockValue = document.createElement("div");
-    stockValue.textContent = head.in_stock ? "? In Stock" : "Out of Stock";
-    stockValue.className = `detail-modal-stock-value ${head.in_stock ? "detail-modal-stock-in" : "detail-modal-stock-out"}`;
+    const inStock = head.stock_level > 0;
+    stockValue.textContent = inStock ? `✓ ${head.stock_level} In Stock` : "✗ Out of Stock";
+    stockValue.className = `detail-modal-stock-value ${inStock ? "detail-modal-stock-in" : "detail-modal-stock-out"}`;
 
     stockSection.appendChild(stockLabel);
     stockSection.appendChild(stockValue);

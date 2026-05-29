@@ -22,8 +22,9 @@ export function createHeadCard(head, onCardClick) {
     rarityBadge.className = "head-card-rarity";
 
     const stockStatus = document.createElement("p");
-    stockStatus.textContent = head.in_stock ? "✓ In Stock" : "Out of Stock";
-    stockStatus.className = `head-card-stock ${head.in_stock ? "in-stock" : "out-of-stock"}`;
+    const inStock = head.stock_level > 0;
+    stockStatus.textContent = inStock ? `✓ ${head.stock_level} In Stock` : "✗ Out of Stock";
+    stockStatus.className = `head-card-stock ${inStock ? "in-stock" : "out-of-stock"}`;
 
     const priceItems = [];
     if (head.price.diamonds) priceItems.push(`?? ${head.price.diamonds}`);
