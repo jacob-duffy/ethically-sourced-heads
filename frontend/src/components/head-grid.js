@@ -4,6 +4,11 @@ import "./head-grid.css";
 export function createHeadCard(head, onCardClick) {
     const card = document.createElement("div");
     card.className = "head-card";
+    // Add rarity outline class
+    const rarity = head.rarity ? head.rarity.toLowerCase() : "";
+    if (["junk", "uncommon", "rare", "legendary", "nation", "player"].includes(rarity)) {
+        card.classList.add(`head-card--${rarity}`);
+    }
 
     const canvas = document.createElement("canvas");
     canvas.width = 160;
@@ -17,9 +22,14 @@ export function createHeadCard(head, onCardClick) {
     name.textContent = head.name;
     name.className = "head-card-name";
 
-    const rarityBadge = document.createElement("div");
-    rarityBadge.textContent = head.rarity;
-    rarityBadge.className = "head-card-rarity";
+        const rarityBadge = document.createElement("div");
+        rarityBadge.textContent = head.rarity;
+        rarityBadge.className = "head-card-rarity";
+        // Add rarity color class to tag (avoid duplicate declaration)
+        const rarityTag = head.rarity ? head.rarity.toLowerCase() : "";
+        if (["junk", "uncommon", "rare", "legendary", "nation", "player"].includes(rarityTag)) {
+            rarityBadge.classList.add(`head-card-rarity--${rarityTag}`);
+        }
 
     const stockStatus = document.createElement("p");
     const inStock = head.stock_level > 0;

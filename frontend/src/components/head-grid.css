@@ -7,7 +7,7 @@
 
 .head-card {
   background: #242424;
-  border: 1px solid #333;
+  border: 2px solid #333;
   border-radius: 8px;
   padding: 12px;
   cursor: pointer;
@@ -15,6 +15,23 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.head-card--junk {
+  border-color: #44474a;
+}
+.head-card--uncommon {
+  border-color: #29422e;
+}
+.head-card--rare {
+  border-color: #22304a;
+}
+.head-card--legendary {
+  border-color: #665c2a;
+}
+.head-card--nation,
+.head-card--player {
+  border-color: #4a2323;
 }
 
 .head-card:hover {
@@ -32,10 +49,31 @@
   background: #1a1a1a;
 }
 
-.head-card-info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.head-card-rarity--junk {
+  border-color: #44474a !important;
+  color: #fff !important;
+  background: #232426 !important;
+}
+.head-card-rarity--uncommon {
+  border-color: #29422e !important;
+  color: #fff !important;
+  background: #171d18 !important;
+}
+.head-card-rarity--rare {
+  border-color: #22304a !important;
+  color: #fff !important;
+  background: #161a22 !important;
+}
+.head-card-rarity--legendary {
+  border-color: #665c2a !important;
+  color: #fff !important;
+  background: #282410 !important;
+}
+.head-card-rarity--nation,
+.head-card-rarity--player {
+  border-color: #4a2323 !important;
+  color: #fff !important;
+  background: #211212 !important;
 }
 
 .head-card-name {
@@ -49,13 +87,18 @@
 
 .head-card-rarity {
   display: inline-block;
-  background: #5b9bd5;
-  color: #fff;
   padding: 4px 8px;
-  border-radius: 3px;
+  border-radius: 12px;
   font-size: 0.75rem;
   font-weight: bold;
   width: fit-content;
+  border: 1.5px solid transparent;
+  background: #181818;
+  color: #ccc;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+  user-select: none;
+  gap: 8px;
 }
 
 .head-card-stock {
