@@ -294,3 +294,69 @@ code {
     border-right-color: var(--border);
   }
 }
+
+.loading-state,
+.error-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.error-state {
+  color: #e07070;
+}
+
+.catalog-container {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.catalog-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.catalog-title {
+  font-size: 2rem;
+  margin: 0 0 12px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.catalog-subtitle,
+.catalog-stock-line {
+  font-size: 0.95rem;
+  color: #999;
+  margin: 0;
+}
+
+.catalog-subtitle {
+  margin-bottom: 6px;
+}
+
+.results-info {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.grid-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.no-results {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: #999;
+}

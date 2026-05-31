@@ -1,4 +1,4 @@
-import './style.css';
+import './styles/style.css';
 import { loadHeads, getHeads, getRarities, getTags, filterHeads, sortHeads, paginateHeads } from './data.js';
 import { createHeadGrid } from './components/head-grid.js';
 import { createSearchBar } from './components/search-bar.js';
@@ -9,7 +9,7 @@ import { createDetailModal } from './components/detail-modal.js';
 const app = document.querySelector('#app');
 
 // Render a simple loading state
-app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;font-size:1.2rem;color:#999;">Loading heads...</div>';
+app.innerHTML = '<div class="loading-state">Loading heads...</div>';
 
 // Initialize
 (async () => {
@@ -18,46 +18,33 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
         const allHeads = getHeads();
 
         if (allHeads.length === 0) {
-            app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;color:#e07070;">No heads found in heads.json</div>';
+            app.innerHTML = '<div class="error-state">No heads found in heads.json</div>';
             return;
         }
 
         // Render catalog
         const catalogContainer = document.createElement('div');
-        catalogContainer.style.cssText = `
-            background:#1a1a1a;
-            color:#e0e0e0;
-            font-family:'Segoe UI',sans-serif;
-            padding:40px 20px;
-            min-height:100vh;
-        `;
+        catalogContainer.className = 'catalog-container';
 
         const header = document.createElement('div');
-        header.style.cssText = `
-            max-width:1200px;
-            margin:0 auto 40px;
-            text-align:center;
-        `;
+        header.className = 'catalog-header';
 
         const title = document.createElement('h1');
         title.textContent = 'Ethically Sourced Heads';
-        title.style.cssText = `
-            font-size:2rem;
-            margin:0 0 12px;
-            color:#fff;
-            letter-spacing:0.5px;
-        `;
+        title.className = 'catalog-title';
 
+        const totalStock = allHeads.reduce((sum, head) => sum + (head.stock_level || 0), 0);
         const subtitle = document.createElement('p');
-        subtitle.textContent = allHeads.length + ' custom heads available';
-        subtitle.style.cssText = `
-            font-size:0.95rem;
-            color:#999;
-            margin:0;
-        `;
+        subtitle.textContent = `${allHeads.length} unique custom heads`;
+        subtitle.className = 'catalog-subtitle';
+
+        const stockLine = document.createElement('p');
+        stockLine.textContent = `${totalStock} in stock`;
+        stockLine.className = 'catalog-stock-line';
 
         header.appendChild(title);
         header.appendChild(subtitle);
+        header.appendChild(stockLine);
         catalogContainer.appendChild(header);
 
         // Content container
@@ -128,22 +115,14 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
 
             // Results count
             const resultsInfo = document.createElement('div');
-            resultsInfo.style.cssText = `
-                max-width:1200px;
-                margin:0 auto 24px;
-                color:#999;
-                font-size:0.9rem;
-            `;
+            resultsInfo.className = 'results-info';
             resultsInfo.textContent = `${filtered.length} result${filtered.length !== 1 ? 's' : ''}`;
             resultsContainer.appendChild(resultsInfo);
 
             // Grid
             if (paginated.items.length) {
                 const gridWrapper = document.createElement('div');
-                gridWrapper.style.cssText = `
-                    max-width:1200px;
-                    margin:0 auto;
-                `;
+                gridWrapper.className = 'grid-wrapper';
 
                 const grid = createHeadGrid(paginated.items, (head) => {
                     createDetailModal(head);
@@ -161,13 +140,7 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
                 }));
             } else {
                 const noResults = document.createElement('div');
-                noResults.style.cssText = `
-                    max-width:1200px;
-                    margin:0 auto;
-                    padding:40px 20px;
-                    text-align:center;
-                    color:#999;
-                `;
+                noResults.className = 'no-results';
                 noResults.textContent = 'No heads match your filters.';
                 resultsContainer.appendChild(noResults);
             }
@@ -181,6 +154,6 @@ app.innerHTML = '<div style="display:flex;justify-content:center;align-items:cen
         render();
     } catch (err) {
         console.error(err);
-        app.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;color:#e07070;">' + err.message + '</div>';
+        app.innerHTML = '<div class="error-state">' + err.message + '</div>';
     }
 })();

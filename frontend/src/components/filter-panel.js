@@ -1,4 +1,4 @@
-import "./filter-panel.css";
+import "./styles/filter-panel.css";
 
 export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, currentState = {}) {
     const container = document.createElement("div");

@@ -1,0 +1,10 @@
+.head-preview__fallback {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.head-preview__canvas-hidden {
+  display: none !important;
+}

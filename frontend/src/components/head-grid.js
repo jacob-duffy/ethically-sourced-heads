@@ -1,5 +1,5 @@
 import { HeadPreviewComponent } from "../viewer.js";
-import "./head-grid.css";
+import "./styles/head-grid.css";
 
 export function createHeadCard(head, onCardClick) {
     const card = document.createElement("div");

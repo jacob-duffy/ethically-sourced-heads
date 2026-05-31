@@ -7,6 +7,7 @@ import {
     drawBuffers,
     freeBuffers,
 } from "./lib/gl-utils.js";
+import "./styles/viewer.css";
 
 // Hover rotation speed: 30°/sec clockwise
 const HOVER_ROTATION_SPEED = 30 * (Math.PI / 180);
@@ -108,8 +109,10 @@ export class HeadPreviewComponent {
         const img = document.createElement("img");
         img.src = this.textureUrl;
         img.crossOrigin = "anonymous";
-        img.style.cssText = `width:${this.canvas.width}px;height:${this.canvas.height}px;image-rendering:pixelated;`;
-        this.canvas.style.display = "none";
+        img.className = "head-preview__fallback";
+        img.width = this.canvas.width;
+        img.height = this.canvas.height;
+        this.canvas.classList.add("head-preview__canvas-hidden");
         this.canvas.parentNode?.insertBefore(img, this.canvas.nextSibling);
         this._fallbackImg = img;
     }

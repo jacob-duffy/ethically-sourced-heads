@@ -1,4 +1,4 @@
-import "./search-bar.css";
+import "./styles/search-bar.css";
 
 /**
  * Creates a search input component.

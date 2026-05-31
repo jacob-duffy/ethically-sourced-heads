@@ -1,5 +1,5 @@
 import { HeadPreviewComponent } from "../viewer.js";
-import "./detail-modal.css";
+import "./styles/detail-modal.css";
 
 export function createDetailModal(head, onClose) {
     const overlay = document.createElement("div");

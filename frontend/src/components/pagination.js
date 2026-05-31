@@ -1,4 +1,4 @@
-import "./pagination.css";
+import "./styles/pagination.css";
 
 /**
  * Creates pagination controls (Previous, page indicator, Next).
