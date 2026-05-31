@@ -1,81 +1,20 @@
 from __future__ import annotations
 
-import base64
 import datetime
-import hashlib
 import json
-import logging
 import subprocess
 import urllib.error
 import urllib.request
 
-from dataclasses import dataclass, field
 from collections import Counter
 from pathlib import Path
 
-
-# -----------------------------------------------------------------------------
-
-
-log = logging.getLogger(__file__)
-log.setLevel(logging.INFO)
-
-handler = logging.StreamHandler()
-handler.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
-handler.setFormatter(formatter)
-log.addHandler(handler)
+from scripts.config import Config
+from scripts.log import get_logger
+from scripts.models import PlayerHeadData
 
 
-# -----------------------------------------------------------------------------
-
-
-def decode_base64(b64: str, to_utf8: bool = True) -> str:
-    pad = 4 - (len(b64) % 4)
-    if pad != 4:
-        b64 += '=' * pad
-    decoded = base64.b64decode(b64)
-    if to_utf8:
-        decoded = decoded.decode("utf-8")
-    return decoded
-
-
-@dataclass
-class PlayerHeadData:
-    name: str
-    rarity: str
-    texture_b64: str
-    texture_url: str
-    stock_level: int = 0
-    price: dict = field(default_factory=dict)
-    tags: list[str] = field(default_factory=list)
-
-    def __hash__(self) -> int:
-        decoded = decode_base64(self.texture_b64, False)
-        digest = hashlib.sha256(decoded).digest()
-        return int.from_bytes(digest, 'big')
-
-    @staticmethod
-    def parse_texture_url(texture_b64: str) -> str:
-        texture_data = json.loads(decode_base64(texture_b64))
-        return texture_data["textures"]["SKIN"]["url"]
-
-    @classmethod
-    def from_raw_input(cls, nbt: dict) -> PlayerHeadData | None:
-        try:
-            if "texture_url" not in nbt:
-                nbt["texture_url"] = cls.parse_texture_url(nbt["texture_b64"])
-            return PlayerHeadData(**nbt)
-        except Exception as e:
-            log.exception(f"Failed to generate player head from {nbt}: {e}")
-            return None
-
-
-class PlayerHeadEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, PlayerHeadData):
-            return obj.__dict__
-        return super().default(obj)
+log = get_logger(__file__)
 
 
 DataCache = dict[str, PlayerHeadData]
@@ -83,23 +22,10 @@ DataCache = dict[str, PlayerHeadData]
 # -----------------------------------------------------------------------------
 
 
-def ensure_directory_structure() -> dict[str]:
-    """
-    Creates the directory structure needed to properly handle data aggregation.
-    """
-    struct = {
-        "untracked":    Path(__file__).parent / "input" / "untracked",
-        "tracked":      Path(__file__).parent / "input" / "tracked",
-        "frontend":     Path(__file__).parent.parent / "frontend" / "public",
-        "texture":      Path(__file__).parent.parent / "frontend" / "public" / "textures"
-    }
-    for directory in struct.values():
-        directory.mkdir(parents=True, exist_ok=True)
-        log.info(f"{directory} is ready for use.")
-    return struct
+cfg = Config()
 
 
-def load_untracked_data(input_dir: Path, output_dir: Path) -> DataCache:
+def load_untracked_data() -> DataCache:
     """
     Loads JSON files from the input dir and attempts to load them into
     PlayerHeadData objects. Successfully loaded items get sent to the output dir
@@ -107,10 +33,10 @@ def load_untracked_data(input_dir: Path, output_dir: Path) -> DataCache:
     """
     dataset = []
     dataset_unique = {}
-    filepaths = list(input_dir.glob("*.json"))
+    filepaths = list(cfg.unprocessed_dir.glob("*.json"))
 
     if not filepaths:
-        log.info(f"No files to load in {input_dir}")
+        log.info(f"No files to load in {cfg.unprocessed_dir}")
         return {}
 
     for path in filepaths:
@@ -127,7 +53,7 @@ def load_untracked_data(input_dir: Path, output_dir: Path) -> DataCache:
 
         # Write successful entries to output directory
         if results[True]:
-            with open(output_dir / path.name, "w", encoding="utf-8") as file:
+            with open(cfg.processed_dir / path.name, "w", encoding="utf-8") as file:
                 json.dump(results[True], file, indent=2)
             log.info(f"Moved {path.name} to tracked directory.")
 
@@ -149,22 +75,24 @@ def load_untracked_data(input_dir: Path, output_dir: Path) -> DataCache:
     return dataset_unique
 
 
-def load_frontend_data(frontend_dir: Path) -> DataCache:
+def load_frontend_data() -> DataCache:
     """
     Loads the data used by the frontend into PlayerHeadData objects. If the frontend
     file does not exist it is created as an empty JSON compatible file.
     """
-    data_filepath = frontend_dir / "heads.json"
 
-    if not data_filepath.exists():
-        raw_data = {}
-        with open(data_filepath, "w", encoding="utf-8") as file:
-            json.dump(raw_data, file)
-        log.info(f"Frontend data created at {data_filepath}")
+    if not cfg.transformed_data_file.exists():
+        raw_data = {
+            "generated_at": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+            "heads": []
+        }
+        with open(cfg.transformed_data_file, "w", encoding="utf-8") as file:
+            json.dump(raw_data, file, indent=2)
+        log.info(f"Frontend data created at {cfg.transformed_data_file}")
     else:
-        with open(data_filepath, "r", encoding="utf-8") as file:
+        with open(cfg.transformed_data_file, "r", encoding="utf-8") as file:
             raw_data = json.load(file)
-        log.info(f"Frontend data loaded at {data_filepath}")
+        log.info(f"Frontend data loaded at {cfg.transformed_data_file}")
 
     data = {}
     for h in raw_data.get("heads", []):
@@ -176,7 +104,7 @@ def load_frontend_data(frontend_dir: Path) -> DataCache:
     return data
 
 
-def update_frontend_data(local: DataCache, remote: DataCache, frontend_dir: Path) -> None:
+def update_frontend_data(local: DataCache, remote: DataCache) -> None:
     """
     Updates the remote data with local data. The iterates over remote data to
     update stock flag if texture_b64 is within local data.
@@ -186,8 +114,10 @@ def update_frontend_data(local: DataCache, remote: DataCache, frontend_dir: Path
         log.info("No update needed on frontend data.")
         return
 
-    log.info(f"{abs(len(local) - len(remote))} unique player heads to be added.")
-    log.info(f"{len(remote)} unique player heads to be updated.")
+    new_textures = set(local) - set(remote)
+    updated_textures = set(local) & set(remote)
+    log.info(f"{len(new_textures)} unique player heads to be added.")
+    log.info(f"{len(updated_textures)} unique player heads to be updated.")
 
     remote.update(local)
     for k in remote:
@@ -196,29 +126,28 @@ def update_frontend_data(local: DataCache, remote: DataCache, frontend_dir: Path
 
     output = {
         "generated_at": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-        "heads": list(remote.values())
+        "heads": [v.to_dict() for v in remote.values()]
     }
 
-    data_filepath = frontend_dir / "heads.json"
-    with open(data_filepath, "w", encoding="utf-8") as file:
-        json.dump(output, file, cls=PlayerHeadEncoder, indent=2)
+    with open(cfg.transformed_data_file, "w", encoding="utf-8") as file:
+        json.dump(output, file, indent=2)
 
-    log.info(f"Frontend data updated at {data_filepath}")
+    log.info(f"Frontend data updated at {cfg.transformed_data_file}")
 
 
-def get_missing_textures(data: DataCache, texture_dir: Path) -> None:
+def get_missing_textures(data: DataCache) -> None:
     """
     Downloads missing texture files from textures.minecraft.net. Compares the texture_b64
     hash against existing texture files in texture_dir, downloading any that are missing.
     Logs the count of newly downloaded textures and any errors encountered.
     """
-    texture_map = {p.stem: p for p in texture_dir.glob("*.png")}
+    texture_map = {p.stem: p for p in cfg.texture_dir.glob("*.png")}
     count = 0
 
     for k, v in data.items():
         try:
             if k not in texture_map:
-                urllib.request.urlretrieve(v.texture_url, texture_dir / f"{k}.png")
+                urllib.request.urlretrieve(v.texture_url, cfg.texture_dir / f"{k}.png")
                 count += 1
         except urllib.error.HTTPError as e:
             log.error(f"HTTP error downloading texture {k}: {e.code} {e.reason}")
@@ -247,11 +176,10 @@ def commit_changes() -> None:
 
 
 def main() -> None:
-    directories = ensure_directory_structure()
-    local_data = load_untracked_data(directories["untracked"], directories["tracked"])
-    remote_data = load_frontend_data(directories["frontend"])
-    update_frontend_data(local_data, remote_data, directories["frontend"])
-    get_missing_textures(remote_data, directories["texture"])
+    local_data = load_untracked_data()
+    remote_data = load_frontend_data()
+    update_frontend_data(local_data, remote_data)
+    get_missing_textures(remote_data)
     # commit_changes()
 
 # -----------------------------------------------------------------------------
