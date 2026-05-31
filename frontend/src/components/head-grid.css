@@ -1,13 +1,16 @@
 .head-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   padding: 0;
-  max-width: calc((240px * 4) + (16px * 3));
+  width: min(100%, calc((240px * 4) + (16px * 3)));
   margin: 0 auto;
 }
 
 .head-card {
+  width: min(240px, 100%);
+  flex: 0 0 auto;
   background: #242424;
   border: 2px solid #333;
   border-radius: 8px;
