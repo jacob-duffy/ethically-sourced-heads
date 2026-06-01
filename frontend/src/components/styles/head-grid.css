@@ -81,6 +81,13 @@
   background: #211212 !important;
 }
 
+.head-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
 .head-card-name {
   margin: 0;
   font-weight: bold;
@@ -100,10 +107,8 @@
   border: 1.5px solid transparent;
   background: #181818;
   color: #ccc;
-  margin-bottom: 4px;
   letter-spacing: 0.5px;
   user-select: none;
-  gap: 8px;
 }
 
 .head-card-stock {
@@ -121,8 +126,45 @@
 
 .head-card-price {
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.head-card-price--tbd {
   font-size: 0.8rem;
-  color: #999;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #666;
+}
+
+.head-card-price-chip {
+  display: inline-block;
+  width: 44px;
+  padding: 2px 0;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  border: 1px solid transparent;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.head-card-price-chip--diamond {
+  background: #1a3a5c;
+  border-color: #3a7abf;
+  color: #7ec8f7;
+}
+
+.head-card-price-chip--emerald {
+  background: #1a3d25;
+  border-color: #2e7d42;
+  color: #5ecc7a;
+}
+
+.head-card-price-chip--iron {
+  background: #2b2b2b;
+  border-color: #666;
+  color: #b0b0b0;
 }

@@ -2,6 +2,18 @@ var p = Player.getPlayer();
 var inv = Player.openInventory();
 var container = null;
 
+const NBT_TYPE = {
+    BYTE:     1,
+    SHORT:    2,
+    INT:      3,
+    LONG:     4,
+    FLOAT:    5,
+    DOUBLE:   6,
+    STRING:   8,
+    LIST:     9,
+    COMPOUND: 10,
+};
+
 const pitches = [70, 0, -70];
 const toTrackSlotIndex = 8;
 const trackedSlotIndex = 7;
@@ -24,32 +36,26 @@ const outputDirectory = "";
  */
 function nbtToObj(helper) {
     switch (helper.getType()) {
-        // Compound
-        case 10:
+        case NBT_TYPE.COMPOUND:
             const obj = {};
             const compound = helper.asCompoundHelper();
             for (const k of compound.getKeys()) obj[k] = nbtToObj(compound.get(k));
             return obj;
-        // List
-        case 9:
+        case NBT_TYPE.LIST:
             const arr = [];
             const list = helper.asListHelper();
             for (let i = 0; i < list.length(); i++) arr.push(nbtToObj(list.get(i)));
             return arr;
-        // String
-        case 8:
+        case NBT_TYPE.STRING:
             return helper.asString();
-        // Double
-        case 6:
-        case 5:
+        case NBT_TYPE.DOUBLE:
+        case NBT_TYPE.FLOAT:
             return helper.asDouble();
-        // Long
-        case 4:
+        case NBT_TYPE.LONG:
             return helper.asLong();
-        // Integer
-        case 3:
-        case 2:
-        case 1:
+        case NBT_TYPE.INT:
+        case NBT_TYPE.SHORT:
+        case NBT_TYPE.BYTE:
             return helper.asInt();
         // Unhandled types - fallback to string representation
         default:

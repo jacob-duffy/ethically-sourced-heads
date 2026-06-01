@@ -1,12 +1,15 @@
 import { HeadPreviewComponent } from "../viewer.js";
+import { RARITY_ORDER } from "../data.js";
 import "./styles/head-grid.css";
+
+const RARITY_CLASSES = RARITY_ORDER.map(r => r.toLowerCase());
 
 export function createHeadCard(head, onCardClick) {
     const card = document.createElement("div");
     card.className = "head-card";
     // Add rarity outline class
     const rarity = head.rarity ? head.rarity.toLowerCase() : "";
-    if (["junk", "uncommon", "rare", "legendary", "nation", "player"].includes(rarity)) {
+    if (RARITY_CLASSES.includes(rarity)) {
         card.classList.add(`head-card--${rarity}`);
     }
 
@@ -27,7 +30,7 @@ export function createHeadCard(head, onCardClick) {
         rarityBadge.className = "head-card-rarity";
         // Add rarity color class to tag (avoid duplicate declaration)
         const rarityTag = head.rarity ? head.rarity.toLowerCase() : "";
-        if (["junk", "uncommon", "rare", "legendary", "nation", "player"].includes(rarityTag)) {
+        if (RARITY_CLASSES.includes(rarityTag)) {
             rarityBadge.classList.add(`head-card-rarity--${rarityTag}`);
         }
 
@@ -36,14 +39,25 @@ export function createHeadCard(head, onCardClick) {
     stockStatus.textContent = inStock ? `✓ ${head.stock_level} In Stock` : "✗ Out of Stock";
     stockStatus.className = `head-card-stock ${inStock ? "in-stock" : "out-of-stock"}`;
 
-    const priceItems = [];
-    if (head.price.diamonds) priceItems.push(`?? ${head.price.diamonds}`);
-    if (head.price.emeralds) priceItems.push(`?? ${head.price.emeralds}`);
-    if (head.price.iron) priceItems.push(`? ${head.price.iron}`);
-
-    const priceSummary = document.createElement("p");
-    priceSummary.textContent = priceItems.length ? priceItems.join(" � ") : "Price TBD";
+    const priceSummary = document.createElement("div");
     priceSummary.className = "head-card-price";
+    const currencies = [
+        { value: head.price.diamonds, label: "D", cls: "head-card-price-chip--diamond" },
+        { value: head.price.emeralds, label: "E", cls: "head-card-price-chip--emerald" },
+        { value: head.price.iron,     label: "I", cls: "head-card-price-chip--iron"    },
+    ];
+    const chips = currencies.filter((c) => c.value);
+    if (chips.length) {
+        for (const c of chips) {
+            const chip = document.createElement("span");
+            chip.textContent = `${c.value}${c.label}`;
+            chip.className = `head-card-price-chip ${c.cls}`;
+            priceSummary.appendChild(chip);
+        }
+    } else {
+        priceSummary.textContent = "Price TBD";
+        priceSummary.classList.add("head-card-price--tbd");
+    }
 
     info.appendChild(name);
     info.appendChild(rarityBadge);

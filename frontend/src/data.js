@@ -43,7 +43,7 @@ export function getHeads() {
 
 // ─── Rarity ──────────────────────────────────────────────────────────────────
 
-const RARITY_ORDER = ["Junk", "Uncommon", "Rare", "Legendary", "Player"];
+export const RARITY_ORDER = ["Junk", "Uncommon", "Rare", "Legendary", "Nation", "Player"];
 
 /**
  * Returns all unique rarity values present in the loaded data, in tier order.
@@ -86,7 +86,7 @@ export function filterHeads({ search = "", rarity = "", tags = [], inStockOnly =
         if (query && !h.name.toLowerCase().includes(query)) return false;
         if (rarity && h.rarity !== rarity) return false;
         if (tags.length && !tags.every((t) => h.tags.includes(t))) return false;
-        if (inStockOnly && !h.in_stock) return false;
+        if (inStockOnly && h.stock_level <= 0) return false;
         return true;
     });
 }
@@ -94,7 +94,7 @@ export function filterHeads({ search = "", rarity = "", tags = [], inStockOnly =
 // ─── Sort ─────────────────────────────────────────────────────────────────────
 
 /**
- * @typedef {"name-asc"|"name-desc"|"rarity-asc"|"rarity-desc"|"price-asc"|"price-desc"|"tags-asc"} SortKey
+ * @typedef {"name-asc"|"name-desc"|"rarity-asc"|"rarity-desc"|"price-asc"|"price-desc"} SortKey
  */
 
 /**
@@ -130,9 +130,6 @@ export function sortHeads(heads, sortKey = "name-asc") {
             break;
         case "price-desc":
             copy.sort((a, b) => priceValue(b) - priceValue(a));
-            break;
-        case "tags-asc":
-            copy.sort((a, b) => (a.tags?.length ?? 0) - (b.tags?.length ?? 0));
             break;
     }
 

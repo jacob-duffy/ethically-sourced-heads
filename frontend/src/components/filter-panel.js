@@ -1,6 +1,6 @@
 import "./styles/filter-panel.css";
 
-export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, currentState = {}) {
+export function createFilterPanel(rarities, tags, onChange, currentState = {}) {
     const container = document.createElement("div");
     container.className = "filter-panel";
 
@@ -10,10 +10,11 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
     let selectedSort = currentState.sort || "name-asc";
 
     const notifyChange = () => {
-        onFilterChange({
+        onChange({
             rarity: selectedRarity,
             tags: Array.from(selectedTags),
             inStockOnly,
+            sort: selectedSort,
         });
     };
 
@@ -66,7 +67,6 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
         { value: "rarity-desc", label: "Rarity (High to Low)" },
         { value: "price-asc", label: "Price (Low to High)" },
         { value: "price-desc", label: "Price (High to Low)" },
-        { value: "tags-asc", label: "Tags (Few to Many)" },
     ];
 
     for (const opt of sortOptions) {
@@ -79,7 +79,7 @@ export function createFilterPanel(rarities, tags, onFilterChange, onSortChange, 
     sortSelect.value = selectedSort;
     sortSelect.addEventListener("change", () => {
         selectedSort = sortSelect.value;
-        if (onSortChange) onSortChange(selectedSort);
+        notifyChange();
     });
 
     sortContainer.appendChild(sortLabel);

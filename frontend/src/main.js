@@ -54,7 +54,7 @@ app.innerHTML = '<div class="loading-state">Loading heads...</div>';
         let currentPage = 1;
         let currentSearch = '';
         let currentFilters = { rarity: '', tags: [], inStockOnly: false };
-        let currentSort = 'name-asc';
+        let currentSort = 'name-asc'; // kept in sync by the filter panel callback
         const ITEMS_PER_PAGE = 12;
 
         // Create persistent search bar (doesn't get recreated on render)
@@ -66,7 +66,7 @@ app.innerHTML = '<div class="loading-state">Loading heads...</div>';
         });
         searchBarContainer.appendChild(searchBar);
 
-        // Container for filter panel (will be recreated to update state)
+        // Container for filter panel
         const filterContainer = document.createElement('div');
 
         // Container for results (grid, pagination)
@@ -75,6 +75,18 @@ app.innerHTML = '<div class="loading-state">Loading heads...</div>';
         content.appendChild(searchBarContainer);
         content.appendChild(filterContainer);
         content.appendChild(resultsContainer);
+
+        // Create filter panel once (persistent across renders)
+        filterContainer.appendChild(createFilterPanel(
+            getRarities(),
+            getTags(),
+            ({ rarity, tags, inStockOnly, sort }) => {
+                currentFilters = { rarity, tags, inStockOnly };
+                currentSort = sort;
+                currentPage = 1;
+                render();
+            }
+        ));
 
         // Render function
         const render = () => {
@@ -91,24 +103,6 @@ app.innerHTML = '<div class="loading-state">Loading heads...</div>';
 
             // Apply pagination
             const paginated = paginateHeads(filtered, currentPage, ITEMS_PER_PAGE);
-
-            // Update filter panel
-            filterContainer.innerHTML = '';
-            filterContainer.appendChild(createFilterPanel(
-                getRarities(),
-                getTags(),
-                (filters) => {
-                    currentFilters = filters;
-                    currentPage = 1;
-                    render();
-                },
-                (sortKey) => {
-                    currentSort = sortKey;
-                    currentPage = 1;
-                    render();
-                },
-                { rarity: currentFilters.rarity, tags: currentFilters.tags, inStockOnly: currentFilters.inStockOnly, sort: currentSort }
-            ));
 
             // Update results container
             resultsContainer.innerHTML = '';
@@ -154,6 +148,10 @@ app.innerHTML = '<div class="loading-state">Loading heads...</div>';
         render();
     } catch (err) {
         console.error(err);
-        app.innerHTML = '<div class="error-state">' + err.message + '</div>';
+        const errDiv = document.createElement('div');
+        errDiv.className = 'error-state';
+        errDiv.textContent = err.message;
+        app.innerHTML = '';
+        app.appendChild(errDiv);
     }
 })();

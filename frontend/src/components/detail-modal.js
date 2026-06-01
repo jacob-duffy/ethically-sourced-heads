@@ -8,7 +8,15 @@ export function createDetailModal(head, onClose) {
     const modal = document.createElement("div");
     modal.className = "detail-modal";
 
+    let viewer;
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Escape") close();
+    };
+
     const close = () => {
+        document.removeEventListener("keydown", handleKeyDown);
+        if (viewer) viewer.destroy();
         overlay.remove();
         if (onClose) onClose();
     };
@@ -17,12 +25,6 @@ export function createDetailModal(head, onClose) {
         if (e.target === overlay) close();
     });
 
-    const handleKeyDown = (e) => {
-        if (e.key === "Escape") {
-            close();
-            document.removeEventListener("keydown", handleKeyDown);
-        }
-    };
     document.addEventListener("keydown", handleKeyDown);
 
     const header = document.createElement("div");
@@ -62,7 +64,7 @@ export function createDetailModal(head, onClose) {
     canvasContainer.appendChild(canvas);
     modal.appendChild(canvasContainer);
 
-    new HeadPreviewComponent(canvas, head.texture_url, { mode: "expanded" });
+    viewer = new HeadPreviewComponent(canvas, head.texture_url, { mode: "expanded" });
 
     const details = document.createElement("div");
     details.className = "detail-modal-details";
@@ -92,16 +94,22 @@ export function createDetailModal(head, onClose) {
 
     const priceContent = document.createElement("div");
     const priceItems = [];
-    if (head.price.diamonds) priceItems.push(`?? ${head.price.diamonds} diamonds`);
-    if (head.price.emeralds) priceItems.push(`?? ${head.price.emeralds} emeralds`);
-    if (head.price.iron) priceItems.push(`? ${head.price.iron} iron`);
+    if (head.price.diamonds) priceItems.push(`${head.price.diamonds} Diamond`);
+    if (head.price.emeralds) priceItems.push(`${head.price.emeralds} Emerald`);
+    if (head.price.iron) priceItems.push(`${head.price.iron} Iron Ingot`);
 
     if (priceItems.length) {
-        for (const item of priceItems) {
+        for (let i = 0; i < priceItems.length; i++) {
             const div = document.createElement("div");
-            div.textContent = item;
+            div.textContent = priceItems[i];
             div.className = "detail-modal-price-item";
             priceContent.appendChild(div);
+            if (i < priceItems.length - 1) {
+                const orDiv = document.createElement("div");
+                orDiv.textContent = "or";
+                orDiv.className = "detail-modal-price-or";
+                priceContent.appendChild(orDiv);
+            }
         }
     } else {
         const div = document.createElement("div");
