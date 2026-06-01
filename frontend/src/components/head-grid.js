@@ -1,5 +1,6 @@
 import { HeadPreviewComponent } from "../viewer.js";
 import { RARITY_ORDER } from "../data.js";
+import { createTagsContainer } from "./tag-badge.js";
 import "./styles/head-grid.css";
 
 const RARITY_CLASSES = RARITY_ORDER.map(r => r.toLowerCase());
@@ -63,6 +64,11 @@ export function createHeadCard(head, onCardClick) {
     info.appendChild(rarityBadge);
     info.appendChild(stockStatus);
     info.appendChild(priceSummary);
+
+    // Add tags if present
+    if (head.tags && head.tags.length > 0) {
+        info.appendChild(createTagsContainer(head.tags));
+    }
 
     card.appendChild(canvas);
     card.appendChild(info);

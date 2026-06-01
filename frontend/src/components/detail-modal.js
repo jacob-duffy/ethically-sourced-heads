@@ -1,4 +1,5 @@
 import { HeadPreviewComponent } from "../viewer.js";
+import { createTagBadge } from "./tag-badge.js";
 import "./styles/detail-modal.css";
 
 export function createDetailModal(head, onClose) {
@@ -136,10 +137,7 @@ export function createDetailModal(head, onClose) {
         tagsList.className = "detail-modal-tags-list";
 
         for (const tag of head.tags) {
-            const tagBadge = document.createElement("div");
-            tagBadge.textContent = tag;
-            tagBadge.className = "detail-modal-tag-badge";
-            tagsList.appendChild(tagBadge);
+            tagsList.appendChild(createTagBadge(tag));
         }
 
         tagsSection.appendChild(tagsLabel);

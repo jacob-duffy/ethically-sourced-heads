@@ -25,6 +25,35 @@ DataCache = dict[str, PlayerHeadData]
 cfg = Config()
 
 
+def load_tags() -> dict[str, list[str]]:
+    """
+    Loads the tags.json file.
+    """
+    if not cfg.tags_file.exists():
+        log.warning(f"Tags file not found at {cfg.tags_file}")
+        return {}
+
+    with open(cfg.tags_file, "r", encoding="utf-8") as file:
+        tags_data = json.load(file)
+
+    log.info(f"Loaded {len(tags_data)} tags")
+    return tags_data
+
+
+def apply_tags_to_data(data: DataCache, tag_map: dict[str, list[str]]) -> None:
+    """
+    Applies tags to PlayerHeadData objects based on name matching.
+    Modifies data in-place.
+    """
+    for head_data in data.values():
+        matching_tags = []
+        for tag_name, head_names in tag_map.items():
+            if head_data.name in head_names:
+                matching_tags.append(tag_name)
+        head_data.tags = matching_tags
+        print(f"{head_data.name} : TAGS -> {head_data.tags}")
+
+
 def load_untracked_data() -> DataCache:
     """
     Loads JSON files from the input dir and attempts to load them into
@@ -107,17 +136,18 @@ def load_frontend_data() -> DataCache:
 def update_frontend_data(local: DataCache, remote: DataCache) -> None:
     """
     Updates the remote data with local data. The iterates over remote data to
-    update stock flag if texture_b64 is within local data.
+    update stock flag if texture_b64 is within local data. Always writes updated
+    data if tags have been modified.
     """
-
-    if len(local) == 0:
-        log.info("No update needed on frontend data.")
-        return
 
     new_textures = set(local) - set(remote)
     updated_textures = set(local) & set(remote)
-    log.info(f"{len(new_textures)} unique player heads to be added.")
-    log.info(f"{len(updated_textures)} unique player heads to be updated.")
+
+    if new_textures:
+        log.info(f"{len(new_textures)} unique player heads to be added.")
+
+    if updated_textures:
+        log.info(f"{len(updated_textures)} unique player heads to be updated.")
 
     remote.update(local)
     for k in remote:
@@ -132,7 +162,10 @@ def update_frontend_data(local: DataCache, remote: DataCache) -> None:
     with open(cfg.transformed_data_file, "w", encoding="utf-8") as file:
         json.dump(output, file, indent=2)
 
-    log.info(f"Frontend data updated at {cfg.transformed_data_file}")
+    if new_textures or updated_textures or len(local) > 0:
+        log.info(f"Frontend data updated at {cfg.transformed_data_file}")
+    else:
+        log.info(f"Frontend data synced at {cfg.transformed_data_file}")
 
 
 def get_missing_textures(data: DataCache) -> None:
@@ -176,8 +209,11 @@ def commit_changes() -> None:
 
 
 def main() -> None:
+    tags = load_tags()
     local_data = load_untracked_data()
+    apply_tags_to_data(local_data, tags)
     remote_data = load_frontend_data()
+    apply_tags_to_data(remote_data, tags)
     update_frontend_data(local_data, remote_data)
     get_missing_textures(remote_data)
     # commit_changes()

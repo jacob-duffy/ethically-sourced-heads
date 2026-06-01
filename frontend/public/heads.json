@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T19:37:30",
+  "generated_at": "2026-05-31T22:42:37",
   "heads": [
     {
       "name": "Skull",
@@ -8,7 +8,9 @@
       "texture_url": "http://textures.minecraft.net/texture/1ae3855f952cd4a03c148a946e3f812a5955ad35cbcb52627ea4acd47d3081",
       "stock_level": 26,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Water Basin",
@@ -17,7 +19,10 @@
       "texture_url": "http://textures.minecraft.net/texture/bbf6d31fab470c8174c7c01c9b6c523a2440f13a8e111d53ec4a21626bed16a6",
       "stock_level": 27,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "magical"
+      ]
     },
     {
       "name": "BritishWanderer",
@@ -35,7 +40,10 @@
       "texture_url": "http://textures.minecraft.net/texture/9dcc4b2a7e32e92201c57a3e352367a543618dad7b35278b9d6aaf6db1581bc9",
       "stock_level": 23,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Great Exyrian Capybara",
@@ -44,7 +52,9 @@
       "texture_url": "http://textures.minecraft.net/texture/56fa776ffd08f8f52827317d1f00e020e8cba7cf8a8ebc37390a7d221bb0a568",
       "stock_level": 5,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Gold jar",
@@ -53,7 +63,10 @@
       "texture_url": "http://textures.minecraft.net/texture/7b32617ae031163baf549b6e113f6c401470faac4bdbe9beb75c19d9aad83f8e",
       "stock_level": 12,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource",
+        "magical"
+      ]
     },
     {
       "name": "Shark",
@@ -62,7 +75,9 @@
       "texture_url": "http://textures.minecraft.net/texture/edff904124efe486b3a54261dbb8072b0a4e11615ad8d7394d814e0e8c8ef9eb",
       "stock_level": 14,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Amboise Token",
@@ -71,7 +86,9 @@
       "texture_url": "http://textures.minecraft.net/texture/5a7ecb437c615d9c0d38d6ec679826a528bf3c2edb1003bb87dd9099e5aa9d6",
       "stock_level": 10,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Hermit Crab",
@@ -80,7 +97,9 @@
       "texture_url": "http://textures.minecraft.net/texture/e396d05c25c606e1acf4d21053c6a8f8b9f2e4f3dfb286774876fbef353fc8de",
       "stock_level": 78,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Cardboard Box",
@@ -89,7 +108,10 @@
       "texture_url": "http://textures.minecraft.net/texture/733b1ad517096564c0a8afd28c1ed69bb5537755ca77f0b45c1e5db78665384f",
       "stock_level": 21,
       "price": {},
-      "tags": []
+      "tags": [
+        "office",
+        "decor"
+      ]
     },
     {
       "name": "Rat",
@@ -98,7 +120,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ea393d83ac5bf4d001fb24c9539c5c644ee92a74cca9108102b0dc279c82085c",
       "stock_level": 13,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Compass",
@@ -107,7 +131,9 @@
       "texture_url": "http://textures.minecraft.net/texture/d706b05d2eee6544015c8a643ca5d3572f3d9003c9d0842ab51732582bd8d8e9",
       "stock_level": 15,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Mosquito",
@@ -116,7 +142,9 @@
       "texture_url": "http://textures.minecraft.net/texture/e30ac1f9c649c99cd60e4bfa5336cc1850f273eab9f5b0b7940d4d4d7dc825dc",
       "stock_level": 8,
       "price": {},
-      "tags": []
+      "tags": [
+        "bug"
+      ]
     },
     {
       "name": "Gold ore",
@@ -125,7 +153,9 @@
       "texture_url": "http://textures.minecraft.net/texture/3386bfade1c8ec6f4e6026b3b70cddbe824850b9c39fdecae4e6c1e87e80c1c4",
       "stock_level": 19,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource"
+      ]
     },
     {
       "name": "Green Potion",
@@ -134,7 +164,10 @@
       "texture_url": "http://textures.minecraft.net/texture/42f57c9eed9f90b7c33b0a447568150cb7b5ec62afddf280b4f981ffd480a766",
       "stock_level": 17,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "magical"
+      ]
     },
     {
       "name": "Present",
@@ -143,7 +176,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f0afa4fffd10863e76c698da2c9c9e799bcf9ab9aa37d8312881734225d3ca",
       "stock_level": 26,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Auroran Sunleaker",
@@ -152,7 +187,9 @@
       "texture_url": "http://textures.minecraft.net/texture/b89042082bb7a7618b784ee7605a134c58834e21e374c888937161057f6c7",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Jar or Spider Eyes",
@@ -161,7 +198,10 @@
       "texture_url": "http://textures.minecraft.net/texture/356456d111b0831d303d1a1beb27bcfbe8197f176b1b1bea6808d25fad64bd50",
       "stock_level": 23,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "magical"
+      ]
     },
     {
       "name": "Clam",
@@ -170,7 +210,9 @@
       "texture_url": "http://textures.minecraft.net/texture/b59c0e9d83dbf04fbdaa7eb2bde8e9fc67994f83420301e582248680fa819f61",
       "stock_level": 88,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Newspapers",
@@ -179,7 +221,10 @@
       "texture_url": "http://textures.minecraft.net/texture/e825419e429afc040c9e68b10523b917d7b8087d63e7648b10807da8b768ee",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "office",
+        "decor"
+      ]
     },
     {
       "name": "Jar of Dragon's Breath",
@@ -188,7 +233,10 @@
       "texture_url": "http://textures.minecraft.net/texture/5e66eb53506eb2999c39b8162a920a313296b2345365c9c2232b85fcecb95170",
       "stock_level": 18,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "magical"
+      ]
     },
     {
       "name": "Mate Drink",
@@ -197,7 +245,9 @@
       "texture_url": "http://textures.minecraft.net/texture/14b9deebde39d5a1527e563dfab79e0361e9b2c8dd62296ba2c6304012cd9eb4",
       "stock_level": 21,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Perch",
@@ -206,7 +256,9 @@
       "texture_url": "http://textures.minecraft.net/texture/74441a0b120cf261bcbda6020b1b3021b89ffd5c2ec188738844ac26d9e3dd4d",
       "stock_level": 32,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Shrimp",
@@ -215,7 +267,9 @@
       "texture_url": "http://textures.minecraft.net/texture/a753b215d2a4d140532201713fe0879fd45c0184f8d307d54b31c04b21fc6fed",
       "stock_level": 88,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Eel",
@@ -224,7 +278,9 @@
       "texture_url": "http://textures.minecraft.net/texture/af7ee22c572512959775896ebdcac9495cd80b22c1b7954361cb1969762099c3",
       "stock_level": 56,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Sapling",
@@ -233,7 +289,9 @@
       "texture_url": "http://textures.minecraft.net/texture/fcfe84ce479454d3c419d24eeeb867d418d140d9a410ed7dc2ede59cc2d35eff",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "nature"
+      ]
     },
     {
       "name": "Blue Catfish",
@@ -242,7 +300,9 @@
       "texture_url": "http://textures.minecraft.net/texture/3a7fe5a0b6c0d40c18084165d1f21b2c1d01276e0eb15944d5ad3b03de442",
       "stock_level": 28,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Number",
@@ -251,7 +311,9 @@
       "texture_url": "http://textures.minecraft.net/texture/84ad12c2f21a1972f3d2f381ed05a6cc088489fcfdf68a713b387482fe91e2",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Crab",
@@ -260,7 +322,9 @@
       "texture_url": "http://textures.minecraft.net/texture/9d6206dfe34d2edc382b55b605682584e9d8eea0ac35f7c4738ddecfcfd959f7",
       "stock_level": 71,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Coconut",
@@ -269,7 +333,10 @@
       "texture_url": "http://textures.minecraft.net/texture/27f02f14184cde75ef7d14c5a8c848def69bff3816a8dedbed5a5efa5a62699a",
       "stock_level": 24,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "nature"
+      ]
     },
     {
       "name": "Wildberry Pie",
@@ -278,7 +345,10 @@
       "texture_url": "http://textures.minecraft.net/texture/90477134d2ac52569f062707b04e4a37a70a9fed6110c7d2f145f76be1cd826e",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "nature"
+      ]
     },
     {
       "name": "Pile of Books",
@@ -287,7 +357,10 @@
       "texture_url": "http://textures.minecraft.net/texture/21c63d9b9fd8742eaeb04c692172cb9da43781698a575cdabe1c04df12c3f",
       "stock_level": 18,
       "price": {},
-      "tags": []
+      "tags": [
+        "office",
+        "decor"
+      ]
     },
     {
       "name": "Flower Basket",
@@ -296,7 +369,10 @@
       "texture_url": "http://textures.minecraft.net/texture/3946da55bac2131c5c4a8a77162ab21d385b55a5ab3bf3b6b4521e921b769e",
       "stock_level": 18,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Silver jar",
@@ -305,7 +381,10 @@
       "texture_url": "http://textures.minecraft.net/texture/2a5ecc575eb91deeed2bc8f84c5f32fba4397b25d09a6ef0501f40c4ffa19855",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource",
+        "magical"
+      ]
     },
     {
       "name": "Sushi",
@@ -314,7 +393,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ae9d22d9ada63e281420ae33691880869fa1a14bfdf87d8e538e998a8f29595b",
       "stock_level": 26,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Symbol",
@@ -323,7 +404,9 @@
       "texture_url": "http://textures.minecraft.net/texture/72431911f4178b4d2b413aa7f5c78ae4447fe9246943c31df31163c0e043e0d6",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Bag of Diamonds",
@@ -332,7 +415,10 @@
       "texture_url": "http://textures.minecraft.net/texture/26a6886e84eae5ba2b2b602432429c6fb28691fc02e9f9ccb5c57f2cdd0f1d8",
       "stock_level": 8,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource",
+        "decor"
+      ]
     },
     {
       "name": "Flowering bush",
@@ -341,7 +427,10 @@
       "texture_url": "http://textures.minecraft.net/texture/fa587f9627015cd9a98d70aa5343450247f4329c6b53452a29c5c3a3d45990ad",
       "stock_level": 17,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Belgian beer",
@@ -350,7 +439,9 @@
       "texture_url": "http://textures.minecraft.net/texture/5af81c676583934d51b7142c87edae6c49c6f67aff163db457297f033c5964f2",
       "stock_level": 12,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Beach Ball",
@@ -359,7 +450,9 @@
       "texture_url": "http://textures.minecraft.net/texture/5a5ab05ea254c32e3c48f3fdcf9fd9d77d3cba04e6b5ec2e68b3cbdcfac3fd",
       "stock_level": 15,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Ming vase",
@@ -368,7 +461,9 @@
       "texture_url": "http://textures.minecraft.net/texture/45ca5e85c4aea608bd3443cabdf1c2bdde3b431ad3aa38fffe04a32eb7e525",
       "stock_level": 10,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Pile of Logs",
@@ -377,7 +472,10 @@
       "texture_url": "http://textures.minecraft.net/texture/cad57d1f60478af6ae1b6b1c28cee534d5dbb8c8cab87963e9c2ef0c6ac58",
       "stock_level": 18,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Potted bush",
@@ -386,7 +484,10 @@
       "texture_url": "http://textures.minecraft.net/texture/4c8ec77ba49e8cb211c321f4fb69458c1583a13368b7cf6ee3fca1934c4af049",
       "stock_level": 20,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -395,7 +496,9 @@
       "texture_url": "http://textures.minecraft.net/texture/cef89c21b7bccee362274160bd34a45ce2ab347b6df9b2689660f0e94adedd50",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Honey jar",
@@ -404,7 +507,11 @@
       "texture_url": "http://textures.minecraft.net/texture/d8ecd636150837b0d9d0299b64cd0b5b55a6f99158c94600eb90fc5ba677330d",
       "stock_level": 20,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "resource",
+        "magical"
+      ]
     },
     {
       "name": "Fancy Books",
@@ -413,7 +520,9 @@
       "texture_url": "http://textures.minecraft.net/texture/eee8d6f5cb7a35a4ddbda46f0478915dd9ebbcef924eb8ca288e91d19c8cb",
       "stock_level": 26,
       "price": {},
-      "tags": []
+      "tags": [
+        "office"
+      ]
     },
     {
       "name": "Melon",
@@ -422,7 +531,10 @@
       "texture_url": "http://textures.minecraft.net/texture/c3fed514c3e238ca7ac1c94b897ff6711b1dbe50174afc235c8f80d029",
       "stock_level": 20,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "nature"
+      ]
     },
     {
       "name": "Frog",
@@ -431,7 +543,9 @@
       "texture_url": "http://textures.minecraft.net/texture/45852a95928897746012988fbd5dbaa1b70b7a5fb65157016f4ff3f245374c08",
       "stock_level": 45,
       "price": {},
-      "tags": []
+      "tags": [
+        "amphibian"
+      ]
     },
     {
       "name": "Blaze",
@@ -440,7 +554,9 @@
       "texture_url": "http://textures.minecraft.net/texture/18046d38a97c91f59949ea742efd74827ccedefe98528552cd327b4b61c39b5f",
       "stock_level": 23,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster"
+      ]
     },
     {
       "name": "Iron ore",
@@ -449,7 +565,9 @@
       "texture_url": "http://textures.minecraft.net/texture/8385aaedd784faef8e8f6f782fa48d07c2fc2bbcf6fea1fbc9b9862d05d228c1",
       "stock_level": 26,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -458,7 +576,9 @@
       "texture_url": "http://textures.minecraft.net/texture/6ede6082442383e5e1c28257b6db2613dc37f9749f48ea0b4f94af98ae0ce",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Octopus",
@@ -467,7 +587,9 @@
       "texture_url": "http://textures.minecraft.net/texture/fd9944fb5eb8639b28e78dc38d579d88fb380ca5789c81f55384112d227e3",
       "stock_level": 83,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Crate of Food",
@@ -476,7 +598,10 @@
       "texture_url": "http://textures.minecraft.net/texture/1591b61529d25a7ecd6bec00948e6fe155e3007f2d7fe559f3a83c6f808e434d",
       "stock_level": 26,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "decor"
+      ]
     },
     {
       "name": "Rubiks Cube",
@@ -485,7 +610,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c94e254f227ec94addf394ef5c15cd50fb2eb52fe21f090982966ccd08710",
       "stock_level": 29,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Anemonae",
@@ -494,7 +621,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ab23e0aecd55ce3b6e8c39de5a59b0cb76f8cbce903ac820d608a0fecf5ed0b3",
       "stock_level": 12,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Wink Emoji",
@@ -503,7 +632,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f4ea2d6f939fefeff5d122e63dd26fa8a427df90b2928bc1fa89a8252a7e",
       "stock_level": 23,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Old Books",
@@ -512,7 +643,9 @@
       "texture_url": "http://textures.minecraft.net/texture/b42ff688a9c21e464c4a908b3c14fc82689694a1569fdafb615fa34a3b7309f5",
       "stock_level": 20,
       "price": {},
-      "tags": []
+      "tags": [
+        "office"
+      ]
     },
     {
       "name": "Symbol",
@@ -521,7 +654,9 @@
       "texture_url": "http://textures.minecraft.net/texture/682ad1b9cb4dd21259c0d75aa315ff389c3cef752be3949338164bac84a96e",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Flower Crown",
@@ -530,7 +665,10 @@
       "texture_url": "http://textures.minecraft.net/texture/d3c86423fa27954f49d534a3afd198dff7e405b051504e918b1cc6ec54048d96",
       "stock_level": 21,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Soul jar",
@@ -539,7 +677,10 @@
       "texture_url": "http://textures.minecraft.net/texture/10891e7666a41d13ae139a196968acce8a054d84dd8304ceadd28a8789883b26",
       "stock_level": 12,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "magical"
+      ]
     },
     {
       "name": "Jellyfish",
@@ -548,7 +689,9 @@
       "texture_url": "http://textures.minecraft.net/texture/913f086ccb56323f238ba3489ff2a1a34c0fdceeafc483acff0e5488cfd6c2f1",
       "stock_level": 31,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Pumpkin",
@@ -557,7 +700,10 @@
       "texture_url": "http://textures.minecraft.net/texture/d7d7ad2dcb57dfa9f023dbb99b698fc53075c3e9d654506139a647ac907fddc5",
       "stock_level": 17,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "nature"
+      ]
     },
     {
       "name": "Letter",
@@ -566,7 +712,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c148a8865bc4afe0747f3415138b96bbb4e8bbb7261f45e5d11d7219f368e4",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Seagull",
@@ -575,7 +723,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c3bde43111f69a7fda6ec6faf2263c827961f390d7c6163ed1231035d1b0b9",
       "stock_level": 11,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird"
+      ]
     },
     {
       "name": "Basaltington Frogfish",
@@ -584,7 +734,9 @@
       "texture_url": "http://textures.minecraft.net/texture/81d22856ec844737078dd1d223d2198290f41f8e3aeeb7c265d3e3298878c1d7",
       "stock_level": 18,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Lyrean Melon Fish",
@@ -593,7 +745,9 @@
       "texture_url": "http://textures.minecraft.net/texture/860679d04bd7e2325fdf0d1583e2c0cf8ad6448db0e576095bcf26058e553678",
       "stock_level": 9,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Taco",
@@ -602,7 +756,9 @@
       "texture_url": "http://textures.minecraft.net/texture/82c5178adc4ffcf64d4c68f7549a751ac02a317540bc2fe65d17f01f9682ddf1",
       "stock_level": 13,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Guardian",
@@ -611,7 +767,9 @@
       "texture_url": "http://textures.minecraft.net/texture/932c24524c82ab3b3e57c2052c533f13dd8c0beb8bdd06369bb2554da86c123",
       "stock_level": 29,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster"
+      ]
     },
     {
       "name": "Tuna",
@@ -620,7 +778,9 @@
       "texture_url": "http://textures.minecraft.net/texture/22fc9f78ce5991cbeff814202894f8ab2a4712e423ae37e2da25aaff2ac3b",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Apple",
@@ -629,7 +789,10 @@
       "texture_url": "http://textures.minecraft.net/texture/b54a09c8e36cc093e3753287a5cac4b37e5654ca518c6582ab99caa95134595e",
       "stock_level": 27,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "nature"
+      ]
     },
     {
       "name": "Anchovy",
@@ -638,7 +801,9 @@
       "texture_url": "http://textures.minecraft.net/texture/7b72fb5a3842c7c203984531d2722fa912fde026c8529d33f7113eacfd8a604d",
       "stock_level": 12,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Scarecrow Head",
@@ -647,7 +812,10 @@
       "texture_url": "http://textures.minecraft.net/texture/74c6016948f42dafbacf019dfd7f491e693742c659c58f66af870eb35bb05ac3",
       "stock_level": 18,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Steelhead Trout",
@@ -656,7 +824,9 @@
       "texture_url": "http://textures.minecraft.net/texture/6e5e42cd89161e5833a1b30082505af605c4b0a4fa45d0f75caa6cc6af095378",
       "stock_level": 6,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Trash can",
@@ -665,7 +835,10 @@
       "texture_url": "http://textures.minecraft.net/texture/d03e19634b00751e7b9c8035fd9ed498e070cad3299cd6bae9d994db3bdc91a",
       "stock_level": 18,
       "price": {},
-      "tags": []
+      "tags": [
+        "office",
+        "decor"
+      ]
     },
     {
       "name": "Letter",
@@ -674,7 +847,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c584dc7ecf36b4f044f8262527985718bf24a9daef012de92e1e76d4586d96",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Medkit",
@@ -683,7 +858,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f7c7df52b5e50badb61fed7212d979e63fe94f1bde02b2968c6b156a770126c",
       "stock_level": 13,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Monitor",
@@ -692,7 +869,10 @@
       "texture_url": "http://textures.minecraft.net/texture/5df4a681702bf4b02de2011194a0258eaca70832f2c4ebf965e0224324604c8d",
       "stock_level": 14,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "office"
+      ]
     },
     {
       "name": "Barrel",
@@ -701,7 +881,9 @@
       "texture_url": "http://textures.minecraft.net/texture/2884ada4c74c0f961469262d956977bafb0b2d7fed9c7bdf35f45199e9f6ddbb",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Bird House",
@@ -710,7 +892,10 @@
       "texture_url": "http://textures.minecraft.net/texture/97f82aceb98fe069e8c166ced00242a76660bbe07091c92cdde54c6ed10dcff9",
       "stock_level": 13,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird",
+        "decor"
+      ]
     },
     {
       "name": "Camera",
@@ -719,7 +904,10 @@
       "texture_url": "http://textures.minecraft.net/texture/66f88107041ff1ad84b0a4ae97298bd3d6b59d0402cbc679bd2f77356d454bc4",
       "stock_level": 19,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "office"
+      ]
     },
     {
       "name": "Cortesian Cod",
@@ -728,7 +916,9 @@
       "texture_url": "http://textures.minecraft.net/texture/4feeff4b7fcfce68b0f74df0db0ad0c01f7301d0c6d893699b402bd50bb376b0",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Volterran Rabid Beaver",
@@ -737,7 +927,9 @@
       "texture_url": "http://textures.minecraft.net/texture/e75fb74f6043ae870fa7d89a4b76fadc70e01cd81712c5ea9f3112f39d8e3886",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Yellow Catfish",
@@ -746,7 +938,9 @@
       "texture_url": "http://textures.minecraft.net/texture/570087dde130846c0e975fe68435d8940f09339fabc6026a9699fdb612b4f121",
       "stock_level": 28,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Okx",
@@ -755,7 +949,9 @@
       "texture_url": "http://textures.minecraft.net/texture/67057782a959922329c5655886f4f89c5ec6cbd2e5efe4675d54101cb730bcd8",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Dolphin",
@@ -764,7 +960,10 @@
       "texture_url": "http://textures.minecraft.net/texture/8e9688b950d880b55b7aa2cfcd76e5a0fa94aac6d16f78e833f7443ea29fed3",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "mammal"
+      ]
     },
     {
       "name": "Globe",
@@ -773,7 +972,10 @@
       "texture_url": "http://textures.minecraft.net/texture/b1dd4fe4a429abd665dfdb3e21321d6efa6a6b5e7b956db9c5d59c9efab25",
       "stock_level": 15,
       "price": {},
-      "tags": []
+      "tags": [
+        "office",
+        "decor"
+      ]
     },
     {
       "name": "Fish bowl",
@@ -782,7 +984,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f8094f8af7345849b93d96a45428342afca89c05c90998c9e79b139dd83c95a0",
       "stock_level": 18,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Royal Sharkbun",
@@ -791,7 +995,9 @@
       "texture_url": "http://textures.minecraft.net/texture/7f66824492b20fde209784f226e6f9cd2b753b26556745c09082a06012ab992c",
       "stock_level": 11,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Koi Carp",
@@ -800,7 +1006,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ac28a1f0f3908274e5860e1ac1b122b7323327aeb376e8378a036c9fa8bf35c5",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Potted Azalea Plant",
@@ -809,7 +1017,10 @@
       "texture_url": "http://textures.minecraft.net/texture/c35257b799d3946927f2b325d366eb5104a5c35219ee4e4d35721bf28a210",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Sturgeon",
@@ -818,7 +1029,9 @@
       "texture_url": "http://textures.minecraft.net/texture/5d731e0e8bf062965e8904e9efc1fde313cf84d531487c266864990bdccd7b54",
       "stock_level": 21,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Hedgehog",
@@ -827,7 +1040,9 @@
       "texture_url": "http://textures.minecraft.net/texture/13d30cf7ef2cd8440242f2c5a77c54cd3f9157e191607d207c487562f8385484",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Monument Bank Present",
@@ -836,7 +1051,9 @@
       "texture_url": "http://textures.minecraft.net/texture/9dd8673f842e50f131b377c84b6fe51c219106df3fbc091a7bc9269b91c66052",
       "stock_level": 17,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Owl",
@@ -845,7 +1062,9 @@
       "texture_url": "http://textures.minecraft.net/texture/16d8ac90b4cd84f83a5801882e0b541d1ee61fc0f6bc1a172a65e508630b0972",
       "stock_level": 11,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird"
+      ]
     },
     {
       "name": "Pavian Bob Hat",
@@ -854,7 +1073,9 @@
       "texture_url": "http://textures.minecraft.net/texture/bfb464372dcaabe5df41340e9be3bd448432108bec033df2aa11e5c5e4f380ea",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Diamond ore",
@@ -863,7 +1084,9 @@
       "texture_url": "http://textures.minecraft.net/texture/90bb41a9ed2a6b57464a7938a4ebaf89f3e2a3856da6bff86bb442efc6fe5de5",
       "stock_level": 15,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource"
+      ]
     },
     {
       "name": "Hermit Skull Crab",
@@ -872,7 +1095,9 @@
       "texture_url": "http://textures.minecraft.net/texture/3b349026f859a9e9b6d1ad86b20bdb81b97b1953ef90c6435776ae055ccf8e7b",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Traffic light",
@@ -881,7 +1106,10 @@
       "texture_url": "http://textures.minecraft.net/texture/e7742034f59db890c8004156b727c77ca695c4399d8e0da5ce9227cf836bb8e2",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "characters"
+      ]
     },
     {
       "name": "Clean clothes",
@@ -899,7 +1127,9 @@
       "texture_url": "http://textures.minecraft.net/texture/83452964f1cbb89146684aa556390a98cf342ca97cefa6a9294a5d36edd930f9",
       "stock_level": 25,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Cup Of Tea",
@@ -908,7 +1138,9 @@
       "texture_url": "http://textures.minecraft.net/texture/d8e94ddd769a5bea748376b4ec7383fd36d267894d7c3bee011e8e4f5fcd7",
       "stock_level": 17,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Mold",
@@ -917,7 +1149,10 @@
       "texture_url": "http://textures.minecraft.net/texture/e136eef801b30f8cb6cd6ed53250527c92205aded1477620a27f5e62bb88b060",
       "stock_level": 20,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Nord Company\u2122 shipping container",
@@ -926,7 +1161,10 @@
       "texture_url": "http://textures.minecraft.net/texture/5ef9efa7447af8f116f8f9d146e26d713b216ae207551e0faf177dedcf71027",
       "stock_level": 14,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "characters"
+      ]
     },
     {
       "name": "Clock",
@@ -935,7 +1173,10 @@
       "texture_url": "http://textures.minecraft.net/texture/b8ebb74f6653dff125481593f79f5732f256729cc16426a73004cf37697a0dfd",
       "stock_level": 17,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "office"
+      ]
     },
     {
       "name": "Tutelle",
@@ -944,7 +1185,9 @@
       "texture_url": "http://textures.minecraft.net/texture/a1448d2b17f1d2c24937ac90930580053b3199aa070c2a788d49ac0e163f9fa8",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Warning lamp",
@@ -953,7 +1196,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f561b179b6bc06956d04f46692b7533b87171374c75273085ab2a6fedb97cbb4",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Sugar jar",
@@ -962,7 +1207,10 @@
       "texture_url": "http://textures.minecraft.net/texture/fe399e2c23ba0e8cc9209241bca5aacbbe8e432bac223c6e892f4a98f0613b18",
       "stock_level": 14,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "resource"
+      ]
     },
     {
       "name": "ttk2",
@@ -980,7 +1228,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f92408fe8d0a3ef5531065e9f566c31aa6eb37484031a46e4466615daf64f705",
       "stock_level": 15,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource"
+      ]
     },
     {
       "name": "Thymmy Crown",
@@ -989,7 +1239,9 @@
       "texture_url": "http://textures.minecraft.net/texture/45587da7fe7336e8ab9f791ea5e2cfc8a827ca959567eb9d53a647babf948d5",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -998,7 +1250,9 @@
       "texture_url": "http://textures.minecraft.net/texture/e184ee71425d6b74c3e6872c3a1177dcbfb0fe799d2c47210b5a44672ce1fba",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Eye",
@@ -1007,7 +1261,10 @@
       "texture_url": "http://textures.minecraft.net/texture/2cef87772afd85b468f4c7fb9571e31435ef765ad413fe460262150423e2021",
       "stock_level": 17,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster",
+        "magical"
+      ]
     },
     {
       "name": "Thi Sang Present",
@@ -1016,7 +1273,9 @@
       "texture_url": "http://textures.minecraft.net/texture/df874bb5b6ef7b3434a58b31496252186295c379be996934d103d15ea225cba3",
       "stock_level": 5,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "MrJeremyFisher",
@@ -1043,7 +1302,9 @@
       "texture_url": "http://textures.minecraft.net/texture/3abe8783494d113fd71988c20ec141c5ab8df7a368a4b74950df91f6ee24315e",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "AstroTX",
@@ -1061,7 +1322,9 @@
       "texture_url": "http://textures.minecraft.net/texture/58bad2c2d483741ae0a7b4a4bf43421270b0e5deb464d4f85fd7688b1a60b4e9",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Jukebox",
@@ -1070,7 +1333,9 @@
       "texture_url": "http://textures.minecraft.net/texture/dcbaead931be57d858416eee4e5ef9f592860895358e7e6d52a2ede77c132e93",
       "stock_level": 17,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Japanese lantern",
@@ -1079,7 +1344,9 @@
       "texture_url": "http://textures.minecraft.net/texture/a42fafc8fbdcfeef8cc93511f4eb21e8429acb92eff15ddebfabc300b50a7bf5",
       "stock_level": 22,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Donut",
@@ -1088,7 +1355,9 @@
       "texture_url": "http://textures.minecraft.net/texture/e6ecadd396ca187fb6ba8e6710514f805216d0179fc2dccfc7cc818b2d572997",
       "stock_level": 25,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Bread",
@@ -1097,7 +1366,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f3487d457f9062d787a3e6ce1c4664bf7402ec67dd111256f19b38ce4f670",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Sandcastle",
@@ -1106,7 +1377,9 @@
       "texture_url": "http://textures.minecraft.net/texture/aa4b7e87821db4e6e42e78d7f260b637993d6be8de94f43e43175baff91f5",
       "stock_level": 22,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Test Tubes",
@@ -1115,7 +1388,9 @@
       "texture_url": "http://textures.minecraft.net/texture/32cbbc40fba60848735ad648f3abc49db6b4ab710aadff9dcb527f161f080b1b",
       "stock_level": 19,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Radio",
@@ -1124,7 +1399,10 @@
       "texture_url": "http://textures.minecraft.net/texture/148a8c55891dec76764449f57ba677be3ee88a06921ca93b6cc7c9611a7af",
       "stock_level": 23,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "office"
+      ]
     },
     {
       "name": "Iebagi",
@@ -1142,7 +1420,9 @@
       "texture_url": "http://textures.minecraft.net/texture/74e9c6e98582ffd8ff8feb3322cd1849c43fb16b158abb11ca7b42eda7743eb",
       "stock_level": 25,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster"
+      ]
     },
     {
       "name": "Traffic light",
@@ -1151,7 +1431,10 @@
       "texture_url": "http://textures.minecraft.net/texture/7a2c12cb22918384e0a81c82a1ed99aebdce94b2ec2754800972319b57900afb",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "characters"
+      ]
     },
     {
       "name": "Aspasian Ichthyosaur",
@@ -1160,7 +1443,10 @@
       "texture_url": "http://textures.minecraft.net/texture/c39d6b346737362397b2faf2be9bfc129196d5a8c02d65fe6cc9f33a1ec032b3",
       "stock_level": 6,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "monster"
+      ]
     },
     {
       "name": "Symbol",
@@ -1169,7 +1455,9 @@
       "texture_url": "http://textures.minecraft.net/texture/6ccbf9883dd359fdf2385c90a459d737765382ec4117b04895ac4dc4b60fc",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Flounder",
@@ -1178,7 +1466,9 @@
       "texture_url": "http://textures.minecraft.net/texture/4fbf7111609f2ec23d9b3f285e1755b62193bd7c3d770576e2b18c48afeb0e29",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Bag of Gold Coins",
@@ -1187,7 +1477,10 @@
       "texture_url": "http://textures.minecraft.net/texture/95fd67d56ffc53fb360a17879d9b5338d7332d8f129491a5e17e8d6e8aea6c3a",
       "stock_level": 21,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource",
+        "decor"
+      ]
     },
     {
       "name": "Ancient debris",
@@ -1196,7 +1489,9 @@
       "texture_url": "http://textures.minecraft.net/texture/9fa2610545c5193b1776fae6f5d6f17579d6002aea032f9f52b54bd3bff59a51",
       "stock_level": 14,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource"
+      ]
     },
     {
       "name": "Enderman",
@@ -1205,7 +1500,9 @@
       "texture_url": "http://textures.minecraft.net/texture/7a59bb0a7a32965b3d90d8eafa899d1835f424509eadd4e6b709ada50b9cf",
       "stock_level": 23,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster"
+      ]
     },
     {
       "name": "Box of Documents",
@@ -1214,7 +1511,9 @@
       "texture_url": "http://textures.minecraft.net/texture/74b89ad06d318f0ae1eeaf660fea78c34eb55d05f01e1cf999f331fb32d38942",
       "stock_level": 20,
       "price": {},
-      "tags": []
+      "tags": [
+        "office"
+      ]
     },
     {
       "name": "Number",
@@ -1223,7 +1522,9 @@
       "texture_url": "http://textures.minecraft.net/texture/9f7aa0d97983cd67dfb67b7d9d9c641bc9aa34d96632f372d26fee19f71f8b7",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Number",
@@ -1232,7 +1533,9 @@
       "texture_url": "http://textures.minecraft.net/texture/9e198fd831cb61f3927f21cf8a7463af5ea3c7e43bd3e8ec7d2948631cce879",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -1241,7 +1544,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c93ed807dbf147c5ef9b8ec46d3fa6e2d7b2dbd3431a23417c1354bb863c4",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Abyssal Jellyfish",
@@ -1250,7 +1555,9 @@
       "texture_url": "http://textures.minecraft.net/texture/fb656bac64ada64fa221e9f48fbf8ab9334b7934efb979d758df4d0c1bd17695",
       "stock_level": 9,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Number",
@@ -1259,7 +1566,9 @@
       "texture_url": "http://textures.minecraft.net/texture/d2a6f0e84daefc8b21aa99415b16ed5fdaa6d8dc0c3cd591f49ca832b575",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Number",
@@ -1268,7 +1577,9 @@
       "texture_url": "http://textures.minecraft.net/texture/d198d56216156114265973c258f57fc79d246bb65e3c77bbe8312ee35db6",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Lyrean Chunglet",
@@ -1277,7 +1588,9 @@
       "texture_url": "http://textures.minecraft.net/texture/a0badbfb06ee97714dd55e162d0ce6742da0396a6d291341e043d0edb40ccbf1",
       "stock_level": 10,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Potted Camellia Plant",
@@ -1286,7 +1599,10 @@
       "texture_url": "http://textures.minecraft.net/texture/9dc4c12bf2619cbfc8f22dc62c022ce15126cea3e212c28d9f96ea310ac4c42",
       "stock_level": 21,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Paddington_Bear",
@@ -1295,7 +1611,9 @@
       "texture_url": "http://textures.minecraft.net/texture/8e9ab47dfb19c3407d1e2bca7b850eba34eaf7c4a43e2c8fd0adc61d257f34d8",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Bronze jar",
@@ -1304,7 +1622,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ddbb0ba029b9b13e85aa7dc5aced41d8fab5f6d0959ca7c93d00f8962ef809e0",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "resource"
+      ]
     },
     {
       "name": "Snom",
@@ -1322,7 +1642,10 @@
       "texture_url": "http://textures.minecraft.net/texture/15c292a24f54a7a43785266552dba7a184f9c50e0d94b337d8d3e76e9e9cce7",
       "stock_level": 15,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "office"
+      ]
     },
     {
       "name": "Beetle",
@@ -1331,7 +1654,9 @@
       "texture_url": "http://textures.minecraft.net/texture/d685ea9ce0d3668692154439859d2863104b42fa082378d504ea66440875cbc2",
       "stock_level": 8,
       "price": {},
-      "tags": []
+      "tags": [
+        "bug"
+      ]
     },
     {
       "name": "Tilapia",
@@ -1340,7 +1665,9 @@
       "texture_url": "http://textures.minecraft.net/texture/5d8b865f8f154f73894c2583df57e14bbc7ba80f58b3992ebb16b5155e037661",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Verdan Sun Dragon Fish",
@@ -1349,7 +1676,9 @@
       "texture_url": "http://textures.minecraft.net/texture/dce7aff4d1b4e3c5c40295e1ad6fb6fd463af8e2b5268ffc3864a218066b4cd6",
       "stock_level": 13,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Flowered Stone",
@@ -1358,7 +1687,10 @@
       "texture_url": "http://textures.minecraft.net/texture/4231908a3235a61ef3328217e4d9c894c3453d6f00d6f3fa8ff39f249f44700a",
       "stock_level": 15,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature"
+      ]
     },
     {
       "name": "Roving Reggian Coral Grouper",
@@ -1367,7 +1699,9 @@
       "texture_url": "http://textures.minecraft.net/texture/42617f21ffc23ccd5379fdc58fe6de37b58a4a9c3ec4e9cbdc0847b29563fbeb",
       "stock_level": 8,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Cookie jar",
@@ -1385,7 +1719,9 @@
       "texture_url": "http://textures.minecraft.net/texture/751e33ddfb1a3f3a949731c95c7570ddb729fb038b939aa1e5b249753f96ca88",
       "stock_level": 16,
       "price": {},
-      "tags": []
+      "tags": [
+        "amphibian"
+      ]
     },
     {
       "name": "Chest",
@@ -1394,7 +1730,9 @@
       "texture_url": "http://textures.minecraft.net/texture/6f68d509b5d1669b971dd1d4df2e47e19bcb1b33bf1a7ff1dda29bfc6f9ebf",
       "stock_level": 24,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Maxopoly",
@@ -1403,7 +1741,10 @@
       "texture_url": "http://textures.minecraft.net/texture/89bc8d38e158e78141798a0c5e7634a463c0227e2d1d532c1083e3fe7613fd42",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "monster"
+      ]
     },
     {
       "name": "Heikkian Kirby",
@@ -1412,7 +1753,9 @@
       "texture_url": "http://textures.minecraft.net/texture/6a42179047560c9a9e5e3c8a4917dac83850d58c4f5afb300207de35239f4de9",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Toontown Cat Fish",
@@ -1421,7 +1764,9 @@
       "texture_url": "http://textures.minecraft.net/texture/e9dcc1f26582c94ce4a1876339c1a0850d8c6f7205071f5e1200fbcbb1863634",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Letter",
@@ -1430,7 +1775,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c992c753bf9c625853ce2a0b7b174b89a6ec26bb5c3ccb473b6a2012496312",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Volterran Rabid Beaver",
@@ -1439,7 +1786,9 @@
       "texture_url": "http://textures.minecraft.net/texture/1c5e6c5b9df9e27ee567b655d0ee8a5ac8e11e1f45abcce46265cc21a799ac",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Tradespin",
@@ -1448,7 +1797,9 @@
       "texture_url": "http://textures.minecraft.net/texture/69606d0137bf2c45e34726ce9a7dce2114de5d321b55e8bbf4d2bee9e6f21b08",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Pink Sheep",
@@ -1457,7 +1808,9 @@
       "texture_url": "http://textures.minecraft.net/texture/2e7cf1c58dbb7c3255b94c6043fa8f0d776c134f4d98b81ca31410965f47a25a",
       "stock_level": 6,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Letter",
@@ -1466,7 +1819,9 @@
       "texture_url": "http://textures.minecraft.net/texture/1c27235de3a55466b627459f1233596ab6a22c435cfc89a4454b47d32b199431",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Diet_Cola",
@@ -1493,7 +1848,9 @@
       "texture_url": "http://textures.minecraft.net/texture/9c613f80a554918c7ab2cd4a278752f151412a44a73d7a286d61d45be4eaae1",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Soup",
@@ -1502,7 +1859,9 @@
       "texture_url": "http://textures.minecraft.net/texture/e06fc6a40da256b453593fa32e52b9e110c50df04a70f484d20009c7ba11426b",
       "stock_level": 21,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Ghast",
@@ -1511,7 +1870,9 @@
       "texture_url": "http://textures.minecraft.net/texture/8b6a72138d69fbbd2fea3fa251cabd87152e4f1c97e5f986bf685571db3cc0",
       "stock_level": 15,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster"
+      ]
     },
     {
       "name": "Snook",
@@ -1520,7 +1881,9 @@
       "texture_url": "http://textures.minecraft.net/texture/40cd71fbbbbb66c7baf7881f415c64fa84f6504958a57ccdb8589252647ea",
       "stock_level": 6,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "\ud835\udcd1\ud835\udcee\ud835\udcfb\ud835\udcfb\ud835\udd02 \ud835\udcd5\ud835\udcf2\ud835\udcfc\ud835\udcf1",
@@ -1529,7 +1892,9 @@
       "texture_url": "http://textures.minecraft.net/texture/747ae0b1e7d56b8d282e29e482ecf03e461eed491f91f014ed3eb908f222e45",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Barracuda",
@@ -1538,7 +1903,9 @@
       "texture_url": "http://textures.minecraft.net/texture/4ad68b6a9363de2396f967a56c2e34a2d23db02d617dd1a0f654a6eb71b0878",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Warning lamp",
@@ -1547,7 +1914,9 @@
       "texture_url": "http://textures.minecraft.net/texture/48300c3a2b3a4df44a6a59c7566b9a2f1a7d5ae9719a0ed3da50ff5f8d5bca8f",
       "stock_level": 8,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Salerno Sea Bream",
@@ -1556,7 +1925,9 @@
       "texture_url": "http://textures.minecraft.net/texture/2f4a8eb76efc01cc469637aff3a8cb902e8461b9231fea75f5ce34b375918679",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "A Friend",
@@ -1565,7 +1936,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c087ab8c51fb638e02ec7f4a2cc8bbb8c8e3edc2c15de2108780e386f0073033",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird"
+      ]
     },
     {
       "name": "Letter",
@@ -1574,7 +1947,9 @@
       "texture_url": "http://textures.minecraft.net/texture/cc58321d4bffbec2ddf66bf38cf2f9e9ddf3fa2f1387dc7d30c62b4d010c8",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Ttastic",
@@ -1592,7 +1967,9 @@
       "texture_url": "http://textures.minecraft.net/texture/2dd0143d8e449ad1ba97e1981712cee0f3fc297dbc17c83b05eea3338d659",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -1601,7 +1978,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f8189f6d2450a91149ef2dfb9474232c6fced84cfff4e27787f5102197717b",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "SoundTech",
@@ -1610,7 +1989,9 @@
       "texture_url": "http://textures.minecraft.net/texture/5c09328ea0abdd88440b765f630ce192c7f23a3d1867d8f8807388f067c8081e",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster"
+      ]
     },
     {
       "name": "Wingzero54",
@@ -1637,7 +2018,9 @@
       "texture_url": "http://textures.minecraft.net/texture/cd319b9343f17a35636bcbc26b819625a9333de3736111f2e932827c8e749",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "The Iaumean Ghostfish",
@@ -1646,7 +2029,11 @@
       "texture_url": "http://textures.minecraft.net/texture/201595690d2bea88dbdc86a62f72959aebe96ca5ee7dac01005b6df5ab666653",
       "stock_level": 9,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "monster",
+        "magical"
+      ]
     },
     {
       "name": "Crown of Pavia",
@@ -1655,7 +2042,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ca8c046384671854732b250eff68bf3ca7e479f47ee60feb469dc8facde64464",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Lion Sculpture",
@@ -1664,7 +2053,10 @@
       "texture_url": "http://textures.minecraft.net/texture/743e585a06a13f55449e71199a18cee5ebc27bd1b4527fa9d2409d959eda17e7",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "magical"
+      ]
     },
     {
       "name": "Symbol",
@@ -1673,7 +2065,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f1fab0e6aea88748ca3b5512ed502a6d18e76d8afc4770d995233ac0dc5186",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Pigeon",
@@ -1682,7 +2076,9 @@
       "texture_url": "http://textures.minecraft.net/texture/b7ea4c017e3456cf09a5c263f34d3cc5f41577b74d60f6f8196c60e07f8c5a96",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird"
+      ]
     },
     {
       "name": "Shiny Pearl",
@@ -1691,7 +2087,11 @@
       "texture_url": "http://textures.minecraft.net/texture/a9bf061c56eaaf12cc8a49099c75b6cd054c9b2aad080422d66af729ae477fff",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature",
+        "magical"
+      ]
     },
     {
       "name": "TealNerd - Civclassics",
@@ -1700,7 +2100,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ca571a587d379201ff5daf5967be59fcb86fcd6097da4ed7db1a23d09c875c9d",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -1709,7 +2111,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f417618ca1f5031d1ab97ba3253d088f4da7a773bbb56f1dec9b999d71ec",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Number",
@@ -1718,7 +2122,9 @@
       "texture_url": "http://textures.minecraft.net/texture/6d68343bd0b129de93cc8d3bba3b97a2faa7ade38d8a6e2b864cd868cfab",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Symbol",
@@ -1727,7 +2133,9 @@
       "texture_url": "http://textures.minecraft.net/texture/9a2d891c6ae9f6baa040d736ab84d48344bb6b70d7f1a280dd12cbac4d777",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Letter",
@@ -1736,7 +2144,9 @@
       "texture_url": "http://textures.minecraft.net/texture/56b1486e1f576bc921b8f9f59fe6122ce6ce9dd70d75e2c92fdb8ab9897b5",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Dice",
@@ -1745,7 +2155,9 @@
       "texture_url": "http://textures.minecraft.net/texture/6ccd753db19fbfcd3a54f6fdd0aa45d1a3bf25c637d667c43e646b1a390fa62d",
       "stock_level": 13,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Kingfish",
@@ -1754,7 +2166,9 @@
       "texture_url": "http://textures.minecraft.net/texture/469953a5e777d502a1f33a0edf08f3f24318c3c88d84a546cefbe80fb8cf58fc",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Slothistan Sloth",
@@ -1763,7 +2177,9 @@
       "texture_url": "http://textures.minecraft.net/texture/406291c2616f21052a31dbb348f1548a8083399e096ad1b250e16dc8e32cbba8",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Gmall Crate",
@@ -1772,7 +2188,9 @@
       "texture_url": "http://textures.minecraft.net/texture/a1bfee8010c680a961bc83a25a54a5865b244b6d1cb7dc75b6219a93555296",
       "stock_level": 12,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Spirit of the Mercutie",
@@ -1781,7 +2199,9 @@
       "texture_url": "http://textures.minecraft.net/texture/b4d7651e9deb5c2813820fed311d541119f3155eaab549d3ad52d202bc3f0e7",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Voltuna",
@@ -1790,7 +2210,9 @@
       "texture_url": "http://textures.minecraft.net/texture/600b0d2d17b0423da10c696c1b695cc71b810afce1ea88191a0add3a298a508c",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Palmetto Sea Roach",
@@ -1799,7 +2221,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f120c8573e0d387f22925b078678ca16320d7d619f4810b7e03265600ae95f21",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Number",
@@ -1808,7 +2232,9 @@
       "texture_url": "http://textures.minecraft.net/texture/7fb91bb97749d6a6eed4449d23aea284dc4de6c3818eea5c7e149ddda6f7c9",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Exegolian Barracuda",
@@ -1817,7 +2243,10 @@
       "texture_url": "http://textures.minecraft.net/texture/51074ba79616c7d8cf8e33849039f67410a2f7c9ce793d447e21f5aa24d50108",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "monster"
+      ]
     },
     {
       "name": "Warning lamp",
@@ -1826,7 +2255,9 @@
       "texture_url": "http://textures.minecraft.net/texture/8e2c18ab35949bf9f9e7d6a69b885ccd8cc2efb9475946d7d3fb5c3fef61",
       "stock_level": 5,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Letter",
@@ -1835,7 +2266,9 @@
       "texture_url": "http://textures.minecraft.net/texture/af22d7cd53d5bfe61eafbc2fb1ac94443eec24f455292139ac9fbdb83d0d09",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Burger",
@@ -1844,7 +2277,9 @@
       "texture_url": "http://textures.minecraft.net/texture/a6ef1c25f516f2e7d6f7667420e33adcf3cdf938cb37f9a41a8b35869f569b",
       "stock_level": 8,
       "price": {},
-      "tags": []
+      "tags": [
+        "food"
+      ]
     },
     {
       "name": "Letter",
@@ -1853,7 +2288,9 @@
       "texture_url": "http://textures.minecraft.net/texture/fc2fcbc24e7382ac112bb2c0d5eca27e9f48ffca5a157e502617a96d636f5c3",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Traffic light",
@@ -1862,7 +2299,10 @@
       "texture_url": "http://textures.minecraft.net/texture/bb72ad8369eb6cd8990cec1f54d1778442a108b0186622c5918eb85159e2fb9e",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "characters"
+      ]
     },
     {
       "name": "Ancient Delian Bust",
@@ -1871,7 +2311,10 @@
       "texture_url": "http://textures.minecraft.net/texture/1e8778f001dcbefffadd43e4668a1011efed81255dc7356b4683e9250d031fee",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "magical"
+      ]
     },
     {
       "name": "Letter",
@@ -1880,7 +2323,9 @@
       "texture_url": "http://textures.minecraft.net/texture/17dd34924d2b6a213a5ed46ae5783f95373a9ef5ce5c88f9d736705983b97",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Blob",
@@ -1889,7 +2334,9 @@
       "texture_url": "http://textures.minecraft.net/texture/4020566c78f1ea44b9e276e2ffe685f215b41616202cf1cf72dd1f208fcabecc",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster"
+      ]
     },
     {
       "name": "Symbol",
@@ -1898,7 +2345,9 @@
       "texture_url": "http://textures.minecraft.net/texture/dd2acd9f2dfc2e05f69d941fe9970e8c3f05527a02a9381157891c8ddb8cf3",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "RedDevel",
@@ -1916,7 +2365,9 @@
       "texture_url": "http://textures.minecraft.net/texture/34772a14ac8a5ff6845546e1ff5cc0f56b1b76482fcbdb56748e331b1e9cae1d",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Karate Fish",
@@ -1925,7 +2376,9 @@
       "texture_url": "http://textures.minecraft.net/texture/5163d503198e556123b1b4824cbb4ba5d410e4ca943af1dbaa81ec24fcc5603c",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Bonkill",
@@ -1934,7 +2387,9 @@
       "texture_url": "http://textures.minecraft.net/texture/cb29ce6d0f553b6b0bd37f16f5719fabc44435bd47e3aa368a80c844148cf79f",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech"
+      ]
     },
     {
       "name": "Gothia Glass of Blood",
@@ -1943,7 +2398,10 @@
       "texture_url": "http://textures.minecraft.net/texture/b448a4bae16402bc95fd2c1e1ae6a632c8475d72bdf986d36f0b76b1b706663c",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "magical"
+      ]
     },
     {
       "name": "Gelatinous Seasnail",
@@ -1952,7 +2410,9 @@
       "texture_url": "http://textures.minecraft.net/texture/811a5933e0191ecbc950f47c9cceb2d89df515a4050d45d68fe29c96e61aac6d",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Deluvian Anglerfish",
@@ -1961,7 +2421,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c33c516f3f380916d41a9355a319f85943aacc8a9c1b4a138017484b61114f68",
       "stock_level": 5,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Arctic Lamprey",
@@ -1970,7 +2432,10 @@
       "texture_url": "http://textures.minecraft.net/texture/e8544e5431df0fa339191b30cd50b7d2efdc6e744592a1dff30e0523478be751",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "monster"
+      ]
     },
     {
       "name": "Trizzzx",
@@ -1979,7 +2444,9 @@
       "texture_url": "http://textures.minecraft.net/texture/7570ceb6cf18d7fd938d095e1d3b90577e2de8ae5fd94953a6d7c04a8f6fe6a4",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "amphibian"
+      ]
     },
     {
       "name": "Symbol",
@@ -1988,7 +2455,9 @@
       "texture_url": "http://textures.minecraft.net/texture/37aee9a75bf0df7897183015cca0b2a7d755c63388ff01752d5f4419fc645",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Toontown Jellybeans",
@@ -1997,7 +2466,10 @@
       "texture_url": "http://textures.minecraft.net/texture/3a943baf71458596aff4eba879f8ac5d2ba267c98385e67673f48ebea5fa",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "food",
+        "magical"
+      ]
     },
     {
       "name": "Toontown Dog Fish",
@@ -2006,7 +2478,9 @@
       "texture_url": "http://textures.minecraft.net/texture/43e7213d285c934106cf5114af5a98f095a2841e6aae7496443f775563a0ed6b",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Xolotl Effigy",
@@ -2015,7 +2489,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ef84165acf0556687a634e4089aadc840bc546ee71878a0fe752554952150964",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Helios Rune",
@@ -2024,7 +2500,9 @@
       "texture_url": "http://textures.minecraft.net/texture/759a61e113ccbedaec57cb968680cfaca0d987ff2d083f5aef0586a50316b28d",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Melon Butterflyfish",
@@ -2033,7 +2511,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ff0a6768469ad6e0ab024c3a525d481ea07f56a23de6a902bd8d8875fcc016c5",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Letter",
@@ -2042,7 +2522,9 @@
       "texture_url": "http://textures.minecraft.net/texture/a71071bef733f477021b3291dc3d47f0bdf0be2da1b165a119a8ff1594567",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -2051,7 +2533,9 @@
       "texture_url": "http://textures.minecraft.net/texture/d4fa96a3cf88561116d24e81adb4661f8bb7b42a4061f412bbd0365452669bee",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Scamfish",
@@ -2060,7 +2544,9 @@
       "texture_url": "http://textures.minecraft.net/texture/752ac311cd951ff267c02260291a6da47ec1258d80a99a0d230b5d12ca9be4b1",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Number",
@@ -2069,7 +2555,9 @@
       "texture_url": "http://textures.minecraft.net/texture/96fab991d083993cb83e4bcf44a0b6cefac647d4189ee9cb823e9cc1571e38",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Surmadri Aurora Starfish",
@@ -2078,7 +2566,10 @@
       "texture_url": "http://textures.minecraft.net/texture/31be3a4d208cd21945bd1953adb852055c22c65feb770a9597e9219ab22a16b0",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "tech"
+      ]
     },
     {
       "name": "Exyrian Guilttripper",
@@ -2087,7 +2578,10 @@
       "texture_url": "http://textures.minecraft.net/texture/7e50f303f2a45f60822e7dadf8099efd708123a0f795a808723931f5f90f7f07",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster",
+        "magical"
+      ]
     },
     {
       "name": "Winterbournian Orca",
@@ -2096,7 +2590,10 @@
       "texture_url": "http://textures.minecraft.net/texture/b008ca9c00cecf499685030e8ef0c230a32908619ce9dc10690b69111591faa1",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "mammal"
+      ]
     },
     {
       "name": "Symbol",
@@ -2105,7 +2602,9 @@
       "texture_url": "http://textures.minecraft.net/texture/47456b506ee3dcab215f33cb93a9edd9749f3e2ff8a4893426e1784692de8b5",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Programmerdan",
@@ -2123,7 +2622,11 @@
       "texture_url": "http://textures.minecraft.net/texture/74a5db8ea7977c7f96a68dfe1fa49b66eafbecd3811a6b6d3d177dda5f942313",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature",
+        "magical"
+      ]
     },
     {
       "name": "Shiny Pearl",
@@ -2132,7 +2635,11 @@
       "texture_url": "http://textures.minecraft.net/texture/1e199400365f1ce97e73e77574e12d5b279d99608639958ecaa25bc80bbca271",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature",
+        "magical"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -2141,7 +2648,9 @@
       "texture_url": "http://textures.minecraft.net/texture/85727a84297c3342de233becfde73526d8d5605fda2529d2e1514938950e6a8",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "CatistStudy",
@@ -2159,7 +2668,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f90fa009604ba745c6701f59978219afc7fbb5cd9554b0d94294bb76cf58b12c",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Arxian Cogfin",
@@ -2168,7 +2679,9 @@
       "texture_url": "http://textures.minecraft.net/texture/536021be5d8c869f8495e43823414f73fcde293f2da9bd6a2dff6a14a67e1b6f",
       "stock_level": 6,
       "price": {},
-      "tags": []
+      "tags": [
+        "monster"
+      ]
     },
     {
       "name": "Gerobatrachus",
@@ -2177,7 +2690,9 @@
       "texture_url": "http://textures.minecraft.net/texture/495694fc8f0d020dea6c6e5dd7fec5e0e953e35f7b358ca7a20b0b9c7cc3f0f6",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "amphibian"
+      ]
     },
     {
       "name": "Yoahtlan Rainbow Pigeon",
@@ -2186,7 +2701,9 @@
       "texture_url": "http://textures.minecraft.net/texture/b20e26802183ccfa527b5dd7e399644d17b9bf166898559e88fede24c6098a81",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird"
+      ]
     },
     {
       "name": "Letter",
@@ -2195,7 +2712,9 @@
       "texture_url": "http://textures.minecraft.net/texture/bde4a89be2197f86d2e6166a0ac541ccc21dce28b7854b788d329a39daec32",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Pavian King Rat",
@@ -2204,7 +2723,9 @@
       "texture_url": "http://textures.minecraft.net/texture/879d59e8cff4831c985988f5701a6689a88ccbcb094a97b61bd408384d093417",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Crimeo",
@@ -2222,7 +2743,9 @@
       "texture_url": "http://textures.minecraft.net/texture/7e4d50e5be35216f9159b87b6a3356309f574a541976858848fcabb27b67cf1c",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Temporal Tuna",
@@ -2231,7 +2754,9 @@
       "texture_url": "http://textures.minecraft.net/texture/c3b2c054db009c708469b937a042e4d716949146879bd9a820333bd567ec2f2c",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Astolfo Bean",
@@ -2249,7 +2774,9 @@
       "texture_url": "http://textures.minecraft.net/texture/90376dc5e3c981b52960578afe4bfc41c1778789bcd80ec2c2d2fd460e5a51a",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Blue Frog",
@@ -2258,7 +2785,9 @@
       "texture_url": "http://textures.minecraft.net/texture/880da1ee231700c697a482b18e74628177407edee3afa8c38dae45f7bad2e09a",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "amphibian"
+      ]
     },
     {
       "name": "Ladybug",
@@ -2267,7 +2796,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f0f4288ae08a38d2ab9cf343141647e4f3be16c5a927e7224a3b1decacff259",
       "stock_level": 5,
       "price": {},
-      "tags": []
+      "tags": [
+        "bug"
+      ]
     },
     {
       "name": "Estalian Phoenix",
@@ -2276,7 +2807,9 @@
       "texture_url": "http://textures.minecraft.net/texture/23aaf7b1a778949696cb99d4f04ad1aa518ceee256c72e5ed65bfa5c2d88d9e",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird"
+      ]
     },
     {
       "name": "Letter",
@@ -2285,7 +2818,9 @@
       "texture_url": "http://textures.minecraft.net/texture/79cbc465525e16a89441d789b72f554e8ff4ea5b393447aef3ff193f0465058",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -2294,7 +2829,9 @@
       "texture_url": "http://textures.minecraft.net/texture/516741a6597b683ccebe211f2f41f54d7f2254f58459adffea7d35c9da21b7",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Diamond Letter",
@@ -2303,7 +2840,9 @@
       "texture_url": "http://textures.minecraft.net/texture/2fbc41ab6ee4f97c659d4f6e47c494e961255a06a496bd5c6638b339dc0",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Exgolian Starfish",
@@ -2312,7 +2851,10 @@
       "texture_url": "http://textures.minecraft.net/texture/b58e773abb90529fbfb935a061bf7915a5a2d5e37d0249969096b58cd51bc8b4",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "magical"
+      ]
     },
     {
       "name": "Frozen Grub",
@@ -2321,7 +2863,10 @@
       "texture_url": "http://textures.minecraft.net/texture/c18c2990ab5571654e51381769288c0ee8e316f88baeeb95966ee296d6b9280c",
       "stock_level": 8,
       "price": {},
-      "tags": []
+      "tags": [
+        "bug",
+        "magical"
+      ]
     },
     {
       "name": "Symbol",
@@ -2330,7 +2875,9 @@
       "texture_url": "http://textures.minecraft.net/texture/16227036b8afed6935d53143d16488d39cf4fb73a671f2b2955e80fc9dfe458",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Vinnish Helmet",
@@ -2339,7 +2886,9 @@
       "texture_url": "http://textures.minecraft.net/texture/60befce6690afe0670192eb859610eba0442e3921c908c29e7ba0ab1be06f0c6",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "magical"
+      ]
     },
     {
       "name": "Togoshigekata",
@@ -2357,7 +2906,9 @@
       "texture_url": "http://textures.minecraft.net/texture/eea759f979b9b8ea831ca7e2d66df148293f1a5147983b52c48efe2c315e",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "bird"
+      ]
     },
     {
       "name": "Auroran Dragonfish",
@@ -2366,7 +2917,10 @@
       "texture_url": "http://textures.minecraft.net/texture/6c6c11bfa54171e9b258e954a3f65bb642c26aced3b98ffbf28e05966de96e2b",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "monster"
+      ]
     },
     {
       "name": "Auroran Sunleaker",
@@ -2375,7 +2929,9 @@
       "texture_url": "http://textures.minecraft.net/texture/44e40a9da20128a02ed1fe6196e4978babb96a3ef325857442d8db60468b5b",
       "stock_level": 3,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor"
+      ]
     },
     {
       "name": "Auroran Stampyfish",
@@ -2384,7 +2940,9 @@
       "texture_url": "http://textures.minecraft.net/texture/538463be80223ad6111cd5fa8f9d094e1b7dd10d6e25db1474e54bd154c52f8",
       "stock_level": 2,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Yukimin",
@@ -2393,7 +2951,9 @@
       "texture_url": "http://textures.minecraft.net/texture/f6a99ecbb682b3e4adda21c681e877c5ca8ede90c8e5105097d803e11e68bd59",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Skandic Ram",
@@ -2402,7 +2962,9 @@
       "texture_url": "http://textures.minecraft.net/texture/ad17f3dab01badfde7056dbf08c2f1b4d92ed23ceb613cab45b8c7c5294f8e09",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "The Voldi Stag",
@@ -2411,7 +2973,9 @@
       "texture_url": "http://textures.minecraft.net/texture/a6e264ae7955ad21d780f7aa498f8a0467c7e5822c0ef1576d29b00f887eea67",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "mammal"
+      ]
     },
     {
       "name": "Bottle o\u2019 Whiskey",
@@ -2429,7 +2993,9 @@
       "texture_url": "http://textures.minecraft.net/texture/9d714bafb0b5ab9cfa7db02efc8927aed1ef29797a595da066efc5c3efdc9",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Letter",
@@ -2438,7 +3004,9 @@
       "texture_url": "http://textures.minecraft.net/texture/58c336dedfe197b434b5ab67988cbe9c2c9f285ec1871fdd1ba434855b",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Symbol",
@@ -2447,7 +3015,9 @@
       "texture_url": "http://textures.minecraft.net/texture/dbe6713f20a9c2de43803b90aefa4db9a6bf89915d7c1590f77a7e10df3a3e54",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "characters"
+      ]
     },
     {
       "name": "Sunfish Sanctum",
@@ -2456,7 +3026,10 @@
       "texture_url": "http://textures.minecraft.net/texture/a0462cf9863d4a2261b4fc2e77323ffdb23147856b9fa0d433c88ae3f9daed60",
       "stock_level": 4,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish",
+        "monster"
+      ]
     },
     {
       "name": "Artonian pupfish",
@@ -2465,7 +3038,9 @@
       "texture_url": "http://textures.minecraft.net/texture/7afbd6a29970af10399602d974f374d68dda88df9f8298d6c0b96f96e8d0dbdc",
       "stock_level": 7,
       "price": {},
-      "tags": []
+      "tags": [
+        "fish"
+      ]
     },
     {
       "name": "Dsclouse",
@@ -2483,7 +3058,11 @@
       "texture_url": "http://textures.minecraft.net/texture/7d16ae951120394f368f2250b7c3ad3fb12cea55ec1b2db5a94d1fb7fd4b6fa",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "decor",
+        "nature",
+        "magical"
+      ]
     },
     {
       "name": "Traffic light",
@@ -2492,7 +3071,10 @@
       "texture_url": "http://textures.minecraft.net/texture/291ac432aa40d7e7a687aa85041de636712d4f022632dd5356c880521af2723a",
       "stock_level": 1,
       "price": {},
-      "tags": []
+      "tags": [
+        "tech",
+        "characters"
+      ]
     }
   ]
 }

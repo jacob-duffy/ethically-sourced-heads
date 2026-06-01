@@ -5,6 +5,7 @@ from .config import Config
 _cfg = Config()
 _req = [
     _cfg.py_module_dir,
+    _cfg.data_dir,
     _cfg.input_data_dir,
     _cfg.unprocessed_dir,
     _cfg.processed_dir,

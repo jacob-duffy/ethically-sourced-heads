@@ -5,14 +5,14 @@ export function createFilterPanel(rarities, tags, onChange, currentState = {}) {
     container.className = "filter-panel";
 
     let selectedRarity = currentState.rarity || "";
-    let selectedTags = new Set(currentState.tags || []);
+    let selectedTag = currentState.tags && currentState.tags.length > 0 ? currentState.tags[0] : "";
     let inStockOnly = currentState.inStockOnly || false;
     let selectedSort = currentState.sort || "name-asc";
 
     const notifyChange = () => {
         onChange({
             rarity: selectedRarity,
-            tags: Array.from(selectedTags),
+            tags: selectedTag ? [selectedTag] : [],
             inStockOnly,
             sort: selectedSort,
         });
@@ -93,63 +93,62 @@ export function createFilterPanel(rarities, tags, onChange, currentState = {}) {
         const tagsLabel = document.createElement("label");
         tagsLabel.textContent = "Tags:";
         tagsLabel.className = "filter-label";
-        tagsContainer.appendChild(tagsLabel);
 
-        const tagsGrid = document.createElement("div");
-        tagsGrid.className = "tags-grid";
+        const tagsSelect = document.createElement("select");
+        tagsSelect.className = "filter-select";
+
+        const allOption = document.createElement("option");
+        allOption.value = "";
+        allOption.textContent = "All";
+        tagsSelect.appendChild(allOption);
 
         for (const tag of tags) {
-            const checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.id = `tag-${tag}`;
-            checkbox.value = tag;
-            checkbox.className = "tag-checkbox";
-            checkbox.checked = selectedTags.has(tag);
-
-            const label = document.createElement("label");
-            label.htmlFor = `tag-${tag}`;
-            label.textContent = tag;
-            label.className = `tag-label ${checkbox.checked ? "tag-checked" : ""}`;
-
-            checkbox.addEventListener("change", () => {
-                if (checkbox.checked) {
-                    selectedTags.add(tag);
-                    label.classList.add("tag-checked");
-                } else {
-                    selectedTags.delete(tag);
-                    label.classList.remove("tag-checked");
-                }
-                notifyChange();
-            });
-
-            label.insertBefore(checkbox, label.firstChild);
-            tagsGrid.appendChild(label);
+            const option = document.createElement("option");
+            option.value = tag;
+            option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+            tagsSelect.appendChild(option);
         }
 
-        tagsContainer.appendChild(tagsGrid);
+        tagsSelect.value = selectedTag;
+        tagsSelect.addEventListener("change", () => {
+            selectedTag = tagsSelect.value;
+            notifyChange();
+        });
+
+        tagsContainer.appendChild(tagsLabel);
+        tagsContainer.appendChild(tagsSelect);
         container.appendChild(tagsContainer);
     }
 
     const stockContainer = document.createElement("div");
-    stockContainer.className = "stock-container";
+    stockContainer.className = "filter-group";
+
+    const stockLabel = document.createElement("label");
+    stockLabel.textContent = "Availability:";
+    stockLabel.className = "filter-label";
+
+    const stockCheckboxContainer = document.createElement("div");
+    stockCheckboxContainer.className = "stock-checkbox-container"
 
     const stockCheckbox = document.createElement("input");
     stockCheckbox.type = "checkbox";
     stockCheckbox.id = "in-stock-only";
     stockCheckbox.checked = inStockOnly;
 
-    const stockLabel = document.createElement("label");
-    stockLabel.htmlFor = "in-stock-only";
-    stockLabel.textContent = "In Stock Only";
-    stockLabel.className = "stock-label";
+    const stockCheckLabel = document.createElement("label");
+    stockCheckLabel.htmlFor = "in-stock-only";
+    stockCheckLabel.textContent = "In Stock Only";
+    stockCheckLabel.className = "stock-label";
 
     stockCheckbox.addEventListener("change", () => {
         inStockOnly = stockCheckbox.checked;
         notifyChange();
     });
 
-    stockContainer.appendChild(stockCheckbox);
+    stockCheckboxContainer.appendChild(stockCheckbox);
+    stockCheckboxContainer.appendChild(stockCheckLabel);
     stockContainer.appendChild(stockLabel);
+    stockContainer.appendChild(stockCheckboxContainer);
     container.appendChild(stockContainer);
 
     return container;
