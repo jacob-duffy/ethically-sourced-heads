@@ -40,7 +40,7 @@
 }
 
 .head-card:hover {
-  border-color: #5b9bd5;
+  border-color: #888;
   transform: scale(1.02);
 }
 
@@ -54,37 +54,21 @@
   background: #1a1a1a;
 }
 
-.head-card-rarity--junk {
-  border-color: #44474a !important;
-  color: #fff !important;
-  background: #232426 !important;
-}
-.head-card-rarity--uncommon {
-  border-color: #29422e !important;
-  color: #fff !important;
-  background: #171d18 !important;
-}
-.head-card-rarity--rare {
-  border-color: #22304a !important;
-  color: #fff !important;
-  background: #161a22 !important;
-}
-.head-card-rarity--legendary {
-  border-color: #665c2a !important;
-  color: #fff !important;
-  background: #282410 !important;
-}
-.head-card-rarity--nation,
-.head-card-rarity--player {
-  border-color: #4a2323 !important;
-  color: #fff !important;
-  background: #211212 !important;
+.head-card-rarity {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: italic;
+  width: fit-content;
+  color: #888;
+  letter-spacing: 0.5px;
+  user-select: none;
 }
 
 .head-card-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   align-items: center;
 }
 
@@ -95,20 +79,6 @@
   color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.head-card-rarity {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  width: fit-content;
-  border: 1.5px solid transparent;
-  background: #181818;
-  color: #ccc;
-  letter-spacing: 0.5px;
-  user-select: none;
 }
 
 .head-card-stock {

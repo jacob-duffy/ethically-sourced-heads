@@ -1,29 +1,20 @@
 import "./styles/tag-badge.css";
 
-export function createTagBadge(tagName) {
+export function createTagBadge(tags) {
   const badge = document.createElement("span");
   badge.className = "tag-badge";
-
-  // tagName is already the category (fish, bird, mammal, etc.)
-  badge.classList.add(`tag-badge--${tagName}`);
-
-  badge.textContent = tagName.charAt(0).toUpperCase() + tagName.slice(1);
-  badge.title = tagName;
-
+  badge.classList.add("tag-badge");
+  badge.textContent = tags.map(t => 
+    t.charAt(0).toUpperCase() + t.slice(1))
+    .sort((a, b) => a.localeCompare(b))
+    .join(", ");
   return badge;
 }
 
 export function createTagsContainer(tags) {
   const container = document.createElement("div");
   container.className = "tags-container";
-
-  if (!tags || tags.length === 0) {
-    return container;
-  }
-
-  for (const tag of tags) {
-    container.appendChild(createTagBadge(tag));
-  }
-
+  if (!tags || tags.length === 0) return container;
+  container.appendChild(createTagBadge(tags));
   return container;
 }

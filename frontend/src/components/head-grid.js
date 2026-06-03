@@ -62,22 +62,20 @@ export function createHeadCard(head, onCardClick) {
 
     info.appendChild(name);
     info.appendChild(rarityBadge);
+    info.appendChild(createTagsContainer(head.tags));
     info.appendChild(stockStatus);
-    info.appendChild(priceSummary);
-
-    // Add tags if present
-    if (head.tags && head.tags.length > 0) {
-        info.appendChild(createTagsContainer(head.tags));
-    }
+    if (inStock) info.appendChild(priceSummary);
 
     card.appendChild(canvas);
     card.appendChild(info);
 
     let initialized = false;
+    let viewer = null;
+
     const initViewer = () => {
         if (initialized) return;
         initialized = true;
-        new HeadPreviewComponent(canvas, head.texture_url, { mode: "preview" });
+        viewer = new HeadPreviewComponent(canvas, head.texture_url, { mode: "preview" });
     };
 
     const observer = new IntersectionObserver(
@@ -100,16 +98,30 @@ export function createHeadCard(head, onCardClick) {
         card.addEventListener("click", () => onCardClick(head));
     }
 
-    return card;
+    return {
+        element: card,
+        destroy() {
+            observer.disconnect();
+            if (viewer) viewer.destroy();
+        },
+    };
 }
 
 export function createHeadGrid(heads, onCardClick) {
     const container = document.createElement("div");
     container.className = "head-grid";
+    const destroyers = [];
 
     for (const head of heads) {
-        container.appendChild(createHeadCard(head, onCardClick));
+        const card = createHeadCard(head, onCardClick);
+        container.appendChild(card.element);
+        destroyers.push(card.destroy);
     }
 
-    return container;
+    return {
+        element: container,
+        destroy() {
+            destroyers.forEach((destroyer) => destroyer());
+        },
+    };
 }

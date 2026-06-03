@@ -135,10 +135,7 @@ export function createDetailModal(head, onClose) {
 
         const tagsList = document.createElement("div");
         tagsList.className = "detail-modal-tags-list";
-
-        for (const tag of head.tags) {
-            tagsList.appendChild(createTagBadge(tag));
-        }
+        tagsList.appendChild(createTagBadge(head.tags));
 
         tagsSection.appendChild(tagsLabel);
         tagsSection.appendChild(tagsList);

@@ -55,6 +55,7 @@ app.innerHTML = '<div class="loading-state">Loading heads...</div>';
         let currentSearch = '';
         let currentFilters = { rarity: '', tags: [], inStockOnly: false };
         let currentSort = 'name-asc'; // kept in sync by the filter panel callback
+        let currentGrid = null;
         const ITEMS_PER_PAGE = 12;
 
         // Create persistent search bar (doesn't get recreated on render)
@@ -90,6 +91,11 @@ app.innerHTML = '<div class="loading-state">Loading heads...</div>';
 
         // Render function
         const render = () => {
+            if (currentGrid) {
+                currentGrid.destroy();
+                currentGrid = null;
+            }
+
             // Apply search and filters
             let filtered = filterHeads({
                 search: currentSearch,
@@ -121,8 +127,9 @@ app.innerHTML = '<div class="loading-state">Loading heads...</div>';
                 const grid = createHeadGrid(paginated.items, (head) => {
                     createDetailModal(head);
                 });
+                currentGrid = grid;
 
-                gridWrapper.appendChild(grid);
+                gridWrapper.appendChild(grid.element);
                 resultsContainer.appendChild(gridWrapper);
 
                 // Pagination
