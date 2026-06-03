@@ -51,7 +51,6 @@ def apply_tags_to_data(data: DataCache, tag_map: dict[str, list[str]]) -> None:
             if head_data.name in head_names:
                 matching_tags.append(tag_name)
         head_data.tags = matching_tags
-        print(f"{head_data.name} : TAGS -> {head_data.tags}")
 
 
 def load_untracked_data() -> DataCache:
@@ -156,7 +155,10 @@ def update_frontend_data(local: DataCache, remote: DataCache) -> None:
 
     output = {
         "generated_at": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-        "heads": [v.to_dict() for v in remote.values()]
+        "heads": sorted(
+            [v.to_dict() for v in remote.values()], 
+            key=lambda x: x["name"].lower(),
+        )
     }
 
     with open(cfg.transformed_data_file, "w", encoding="utf-8") as file:
